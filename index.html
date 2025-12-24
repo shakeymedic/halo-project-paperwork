@@ -16,6 +16,7 @@
             --chart-staff: #4c6c94;
             --chart-danger: #d5281b;
             --highlight-bg: #e8f0f7;
+            --success-color: #007f3b;
         }
 
         body {
@@ -289,6 +290,37 @@
             page-break-inside: avoid;
         }
 
+        /* --- ACTION PLAN TIMELINE --- */
+        .action-plan {
+            margin-top: 10px;
+        }
+        .action-step {
+            display: flex;
+            margin-bottom: 12px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .action-time {
+            background: var(--primary-color);
+            color: white;
+            padding: 10px;
+            width: 80px;
+            text-align: center;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            flex-shrink: 0;
+        }
+        .action-content {
+            padding: 10px;
+            flex-grow: 1;
+            background: white;
+        }
+        .action-title { font-weight: bold; color: var(--secondary-color); display: block; margin-bottom: 4px; }
+
         /* Print Specifics */
         @media print {
             body { background-color: white; padding: 0; }
@@ -327,12 +359,22 @@
         </section>
 
         <section>
-            <h2>2. Problem & Background</h2>
+            <h2>2. Ethics & Governance</h2>
+            <p>This project is classified as a Service Improvement / Quality Improvement initiative (not research) as it measures performance against established standards (RCEM, DAS, Resus Council UK) to improve local care delivery. Formal ethical approval was not required, but the project has been registered with the local Clinical Governance audit database.</p>
+        </section>
+
+        <section>
+            <h2>3. Patient & Public Involvement (PPI)</h2>
+            <p>While direct patient involvement in HALO procedures is limited due to their emergent nature, this project addresses the patient safety priority of "Right Kit, Right Place, Right Time." Delays in locating equipment for time-critical procedures (e.g., CICO, thoracotomy) directly impact mortality. Furthermore, providing cognitive aids reduces the "Second Victim" effect on staff, ensuring a more resilient workforce for future patient care.</p>
+        </section>
+
+        <section>
+            <h2>4. Problem & Background</h2>
             <p>HALO procedures demand immediate, error-free execution. However, cognitive load theory suggests that during high-stress events, the capacity for "search tasks" (finding kit) competes with clinical decision-making. Our department currently stores equipment in dispersed locations (Ophthalmology store, Obs/Gynae box, Resus store), creating unnecessary friction. Baseline analysis confirms that this "scattered" infrastructure correlates directly with low clinician confidence.</p>
         </section>
 
         <section>
-            <h2>3. SMART Aims</h2>
+            <h2>5. SMART Aims</h2>
             <p>To improve patient safety and staff readiness by <strong>June 2026</strong>:</p>
             <ul>
                 <li><strong>Outcome 1 (Knowledge):</strong> Increase the proportion of ED clinicians who can correctly locate equipment for all six HALO procedures from baseline (27%) to <strong>≥90%</strong>.</li>
@@ -341,34 +383,36 @@
         </section>
 
         <section>
-            <h2>4. Measurement Strategy</h2>
-            <p>To ensure robust monitoring aligned with RCEM standards, we have defined the following measures:</p>
+            <h2>6. Methodology & Measurement Strategy</h2>
+            <p>This project utilises the <strong>Model for Improvement</strong> framework. To ensure robust monitoring aligned with RCEM standards, we have defined the following measures:</p>
             <table class="measure-table">
                 <tr>
                     <th width="20%">Type</th>
                     <th width="35%">Measure Description</th>
-                    <th width="45%">Rationale</th>
+                    <th width="45%">Rationale & Data Plan</th>
                 </tr>
                 <tr>
                     <td class="measure-row-title">Outcome</td>
-                    <td>% of staff confident to locate kit and perform (via repeat Survey).</td>
-                    <td>Directly reflects the aim of improved readiness and reduced cognitive burden.</td>
+                    <td>% of staff confident to locate kit and perform.</td>
+                    <td><strong>Method:</strong> Repeat Anonymous Survey.<br><strong>Frequency:</strong> Quarterly (Feb 2026, May 2026).</td>
                 </tr>
                 <tr>
                     <td class="measure-row-title">Process</td>
                     <td>% compliance with Weekly Trolley Checklist.</td>
-                    <td>Ensures the intervention (the trolley) remains stocked, sealed, and viable (fidelity of intervention).</td>
+                    <td><strong>Method:</strong> Audit of Trolley Logbook.<br><strong>Frequency:</strong> Weekly plotting on Run Chart.<br><strong>Target:</strong> 100% compliance (Zero missing items).</td>
                 </tr>
                 <tr>
                     <td class="measure-row-title">Balancing</td>
                     <td>Incidents of "borrowed" equipment affecting other areas.</td>
-                    <td>Centralising kit must not strip other critical areas (e.g., Eye Casualty) of their daily stock.</td>
+                    <td><strong>Method:</strong> Datix/Incident report review.<br><strong>Goal:</strong> Zero incidents of stock depletion in donor areas (e.g. Eye Casualty).</td>
                 </tr>
             </table>
         </section>
 
+        <div class="page-break"></div>
+
         <section>
-            <h2>5. Baseline Data Analysis (October 2025)</h2>
+            <h2>7. Baseline Data Analysis (October 2025)</h2>
             <p>We surveyed 12 Consultants and 16 ED Staff. The data highlights a significant "Readiness Gap".</p>
             
             <div class="legend">
@@ -396,10 +440,8 @@
             <p><strong>Interpretation:</strong> Even at Consultant level, nearly 60% of respondents could not immediately locate the necessary equipment. Among the wider team, 90% felt unable to perform without guidance, validating the need for the "Two-Page" cognitive aid system.</p>
         </section>
 
-        <div class="page-break"></div>
-
         <section>
-            <h2>6. Methodology: Driver Diagram</h2>
+            <h2>8. Driver Diagram</h2>
             <div class="driver-diagram">
                 <div class="driver-col">
                     <div class="driver-header">Aim</div>
@@ -432,7 +474,7 @@
         </section>
 
         <section>
-            <h2>7. Stakeholder Engagement</h2>
+            <h2>9. Stakeholder Engagement</h2>
             <p>Successful change requires multidisciplinary buy-in. Key engagement steps included:</p>
             <ul>
                 <li><strong>Resus Nursing Team:</strong> Consultation on trolley layout to ensure it fits physical workflows and existing checking routines.</li>
@@ -441,8 +483,10 @@
             </ul>
         </section>
 
+        <div class="page-break"></div>
+
         <section>
-            <h2>8. Fishbone Analysis (Root Causes)</h2>
+            <h2>10. Fishbone Analysis (Root Causes)</h2>
             <div class="fishbone-container">
                 <svg viewBox="0 0 800 350">
                     <line x1="50" y1="175" x2="600" y2="175" class="fishbone-line" stroke-width="4" marker-end="url(#arrow)" />
@@ -485,7 +529,7 @@
         </section>
 
         <section>
-            <h2>9. PDSA Cycle 1: Implementation</h2>
+            <h2>11. PDSA Cycle 1: Implementation</h2>
             <p><strong>Objective:</strong> Test if centralising equipment and implementing the WMEBEM cognitive aids improves staff confidence.</p>
             
             <h3>Plan</h3>
@@ -517,19 +561,36 @@
         </section>
 
         <section>
-            <h2>10. Sustainability & Spread</h2>
-            <p>To ensure this improvement is not transient, the following sustainability measures are being embedded:</p>
-            <ul>
-                <li><strong>Business as Usual (BAU):</strong> The HALO Trolley checklist has been added to the daily Resus Technician checks, removing dependency on the project lead.</li>
-                <li><strong>Induction:</strong> The "Trolley Tour" is now a mandatory station in the Junior Doctor Departmental Induction.</li>
-                <li><strong>Spread:</strong> The WMEBEM guide is hosted publicly, allowing other sites in the region to adopt the cognitive aids.</li>
-            </ul>
+            <h2>12. Strategic Action Plan (Next Steps)</h2>
+            <p>To transition from implementation to sustainability, the following detailed plan is in place for the next 12 weeks:</p>
+            
+            <div class="action-plan">
+                <div class="action-step">
+                    <div class="action-time">Weeks<br>1-4</div>
+                    <div class="action-content">
+                        <span class="action-title">Embedding & Fidelity Checks</span>
+                        Focus on the <strong>Process Measure</strong>. Daily spot checks of the trolley to ensure items aren't migrating (fidelity). If seals are broken, identify why (clinical use vs borrowing).
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="action-time">Weeks<br>5-8</div>
+                    <div class="action-content">
+                        <span class="action-title">Data Collection (Run Chart)</span>
+                        Plot weekly compliance of the nursing checklist. If compliance drops below 100%, run a mini-PDSA (e.g., move the logbook, simplify the list).
+                    </div>
+                </div>
+                <div class="action-step">
+                    <div class="action-time">Week<br>12</div>
+                    <div class="action-content">
+                        <span class="action-title">Outcome Measurement & Decision</span>
+                        Re-release the staff survey (Outcome Measure). Compare against baseline. If confidence targets (>90%) are missed, trigger <strong>PDSA Cycle 2: Simulation Training</strong>.
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <div class="page-break"></div>
-
         <section>
-            <h2>11. Project Lead Reflection</h2>
+            <h2>13. Project Lead Reflection</h2>
             <div class="reflection-box">
                 <p><strong>Dr Jake Turner:</strong> "Leading this QIP has highlighted the distinct difference between 'availability' and 'accessibility'. While we technically possessed the equipment for these procedures, the cognitive friction required to assemble it rendered it effectively unavailable during a crisis. Engaging the nursing team early was pivotal; their insights on trolley 'real estate' prevented us from creating a system that would be rejected by daily users. Moving forward, the challenge will be maintaining the 'fidelity' of the trolley (preventing item migration) which is why the Process Measure of checklist compliance is so vital."</p>
             </div>
