@@ -17,6 +17,8 @@
             --chart-danger: #d5281b;
             --highlight-bg: #e8f0f7;
             --success-color: #007f3b;
+            --trolley-grey: #e0e0e0;
+            --drawer-border: #999;
         }
 
         body {
@@ -321,6 +323,196 @@
         }
         .action-title { font-weight: bold; color: var(--secondary-color); display: block; margin-bottom: 4px; }
 
+        /* --- TROLLEY DIAGRAM STYLES --- */
+        .trolley-diagram-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin: 30px 0;
+            gap: 20px;
+            page-break-inside: avoid;
+        }
+
+        .trolley-stack {
+            width: 200px;
+            background: #f5f5f5;
+            border: 2px solid #555;
+            border-radius: 8px 8px 0 0;
+            padding: 5px;
+            position: relative;
+        }
+        
+        .trolley-stack::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 20px;
+            width: 20px;
+            height: 20px;
+            background: #333;
+            border-radius: 50%;
+            box-shadow: 140px 0 0 #333; /* Second wheel */
+        }
+
+        .drawer {
+            height: 40px;
+            background: white;
+            border: 1px solid #999;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            font-size: 0.7em; 
+            font-weight: bold;
+            color: #333;
+            box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        /* Split Drawer Style */
+        .drawer.split {
+            display: flex;
+            padding: 0;
+        }
+        .drawer-half {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .drawer-half:first-child {
+            border-right: 1px dashed #999;
+        }
+
+        .drawer::before {
+            content: none; /* Remove default handle for split drawers */
+        }
+        /* Custom handles for regular drawers */
+        .drawer:not(.split)::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            width: 30px;
+            height: 4px;
+            background: #ccc;
+            border-radius: 2px;
+        }
+
+        /* Colour Coding */
+        .bg-canthotomy { border-left: 5px solid #d32f2f; } /* Red */
+        .bg-maxfax { border-left: 5px solid #fbc02d; } /* Yellow */
+        .bg-escharotomy { border-right: 5px solid #e64a19; } /* Orange */
+        .bg-pericard { border-right: 5px solid #8e24aa; } /* Purple - RIGHT SIDE */
+        .bg-chest { border-left: 5px solid #0288d1; } /* Blue */
+        .bg-thoracotomy { border-left: 5px solid #1976d2; } /* Dark Blue */
+        .bg-hysterotomy { border-left: 5px solid #c2185b; } /* Pink */
+        .bg-access { border-left: 5px solid #607d8b; } /* Blue Grey */
+
+
+        .drawer-detail-view {
+            flex-grow: 1;
+            border: 1px dashed #999;
+            padding: 15px;
+            background: #fff;
+            border-radius: 4px;
+        }
+
+        .detail-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        .layout-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 10px;
+            height: 150px;
+            border: 2px solid #333; /* Drawer boundary */
+            padding: 10px;
+            background: #fafafa;
+        }
+
+        .layout-guide {
+            background: #fff3e0;
+            border: 1px solid #ffb74d;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 0.75em;
+            color: #e65100;
+            font-weight: bold;
+        }
+        
+        .layout-kit {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 5px;
+        }
+
+        .kit-item {
+            background: #e3f2fd;
+            border: 1px solid #90caf9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7em;
+            text-align: center;
+            color: #1565c0;
+        }
+
+        /* PROCUREMENT LIST STYLES */
+        .procurement-section {
+            font-size: 0.9em;
+        }
+        .checklist-group {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-left: 3px solid var(--secondary-color);
+        }
+        .checklist-group h5 {
+            margin: 0 0 10px 0;
+            color: var(--primary-color);
+            border-bottom: 1px solid #ddd;
+        }
+        .checklist-item {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+        .checklist-item::before {
+            content: "☐";
+            font-size: 1.2em;
+            margin-right: 8px;
+            line-height: 1;
+        }
+        
+        .order-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .order-table th, .order-table td {
+            border: 1px solid #ccc;
+            padding: 6px 10px;
+            text-align: left;
+        }
+        .order-table th {
+            background: var(--highlight-bg);
+            color: var(--primary-color);
+        }
+
         /* Print Specifics */
         @media print {
             body { background-color: white; padding: 0; }
@@ -370,7 +562,7 @@
 
         <section>
             <h2>4. Problem & Background</h2>
-            <p>HALO procedures demand immediate, error-free execution. However, cognitive load theory suggests that during high-stress events, the capacity for "search tasks" (finding kit) competes with clinical decision-making. Our department currently stores equipment in dispersed locations (Ophthalmology store, Obs/Gynae box, Resus store), creating unnecessary friction. Baseline analysis confirms that this "scattered" infrastructure correlates directly with low clinician confidence.</p>
+            <p>HALO procedures demand immediate, error-free execution. However, cognitive load theory suggests that during high-stress events, the capacity for "search tasks" (finding kit) competes with clinical decision-making. Our department currently stores equipment in dispersed locations (Ophthalmology store, Obs/Gynae box, Resus store), creating unnecessary friction. Baseline analysis confirms that this "scattered" infrastructure correlates directly with low clinician confidence. <strong>Note on Scope:</strong> While the baseline survey focused on 6 core procedures, the implemented intervention (HALO Trolley & Guide) addresses the full spectrum of critical interventions, including Pericardiocentesis, as per standard major trauma guidelines.</p>
         </section>
 
         <section>
@@ -471,7 +663,7 @@
                 </div>
                 <div class="driver-col">
                     <div class="driver-header">Change Ideas</div>
-                    <div class="driver-box"><strong>HALO Trolley</strong><br>Grouped by procedure</div>
+                    <div class="driver-box"><strong>HALO Trolley</strong><br>6-Drawer Optimised Stack</div>
                     <div class="driver-box"><strong>Dept. HALO Guide</strong><br>2-Page System (Walkthrough+Action)</div>
                     <div class="driver-box"><strong>"Trolley Dash"</strong><br>Simulations & Handovers</div>
                 </div>
@@ -598,6 +790,215 @@
             <h2>13. Project Lead Reflection</h2>
             <div class="reflection-box">
                 <p><strong>Dr Jake Turner:</strong> "Leading this QIP has highlighted the distinct difference between 'availability' and 'accessibility'. While we technically possessed the equipment for these procedures, the cognitive friction required to assemble it rendered it effectively unavailable during a crisis. Engaging the nursing team early was pivotal; their insights on trolley 'real estate' prevented us from creating a system that would be rejected by daily users. Moving forward, the challenge will be maintaining the 'fidelity' of the trolley (preventing item migration) which is why the Process Measure of checklist compliance is so vital."</p>
+            </div>
+        </section>
+
+        <div class="page-break"></div>
+
+        <section>
+            <h2>14. Appendix: Trolley & Drawer Configuration</h2>
+            <p>Following consultation with the Resus Nursing team, the trolley has been condensed to a <strong>6-Drawer Stack</strong>. To accommodate key procedures without waste, "Internal Dividers" have been used for drawers containing low-volume kit (e.g. Canthotomy and Pericardiocentesis). <strong>Safety Note:</strong> Airway/FONA equipment remains in the dedicated Difficult Airway Trolley to avoid duplication and fragmentation.</p>
+            
+            <div class="trolley-diagram-container">
+                <!-- Left: Trolley Stack -->
+                <div>
+                    <h4 style="text-align:center; margin-top:0;">Optimised HALO Trolley</h4>
+                    <div class="trolley-stack">
+                        <!-- Drawer 1: Head/Neck -->
+                        <div class="drawer split">
+                            <div class="drawer-half bg-canthotomy">1a. Canthotomy</div>
+                            <div class="drawer-half bg-pericard">1b. Pericard.</div>
+                        </div>
+                        <!-- Drawer 2: Surface/Burns -->
+                        <div class="drawer split">
+                            <div class="drawer-half bg-maxfax">2a. MaxFax Pack</div>
+                            <div class="drawer-half bg-escharotomy">2b. Escharotomy</div>
+                        </div>
+                        <!-- Drawer 3: Circulation -->
+                        <div class="drawer split">
+                            <div class="drawer-half bg-access">3a. Vasc. Access</div>
+                            <div class="drawer-half" style="background:#eee; border-left:1px dashed #999;">3b. Spare</div>
+                        </div>
+                        <!-- Drawer 4: Chest Access -->
+                        <div class="drawer bg-chest">4. Chest Drain / Thoracostomy</div>
+                        <!-- Drawer 5: Obstetrics -->
+                        <div class="drawer bg-hysterotomy">5. Resuscitative Hysterotomy</div>
+                        <!-- Drawer 6: Major Chest -->
+                        <div class="drawer bg-thoracotomy">6. Emergency Thoracotomy</div>
+                    </div>
+                </div>
+
+                <!-- Right: Drawer Detail -->
+                <div class="drawer-detail-view">
+                    <div class="detail-title">Detail: Drawer 1 (Split Configuration)</div>
+                    <div class="layout-grid">
+                        <div class="layout-guide">
+                            <strong>DIVIDER</strong><br>
+                            Left: Eyes<br>
+                            Right: Pericardium
+                        </div>
+                        <div class="layout-kit">
+                            <div class="kit-item">Drape/Speculum<br>(Canthotomy)</div>
+                            <div class="kit-item">Spinal Needle<br>(Pericard)</div>
+                            <div class="kit-item">Iris Scissors</div>
+                            <div class="kit-item">3-Way Tap</div>
+                        </div>
+                    </div>
+                    <p style="font-size:0.8em; margin-top:10px; color:#666;">*Split drawers allow logical grouping of small-volume, high-acuity kits without wasting space.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="page-break"></div>
+
+        <section>
+            <h2>15. Appendix: Master Procurement & Stocking List</h2>
+            <div class="procurement-section">
+                <h3>PART A: Drawer-by-Drawer Stocking List</h3>
+                <p><em>For use by the Clinical Team when checking the trolley.</em></p>
+
+                <!-- Drawer 1 -->
+                <div class="checklist-group">
+                    <h5>Drawer 1a: Lateral Canthotomy (Left)</h5>
+                    <div class="checklist-item">Sterile Dressing Pack (Small) x1</div>
+                    <div class="checklist-item">Chlorhexidine applicator (2% in 70% Alcohol) x1</div>
+                    <div class="checklist-item">Sterile Drape (Fenestrated) x1</div>
+                    <div class="checklist-item">Syringe (2ml) x1</div>
+                    <div class="checklist-item">Needle (Orange / 25G) x1</div>
+                    <div class="checklist-item"><strong>Straight</strong> Mosquito Forceps (Sterile/Single Use) x1</div>
+                    <div class="checklist-item">Iris Scissors OR Small Sharp/Sharp Scissors (Sterile) x1</div>
+                    <div class="checklist-item">Adson Toothed Forceps (Sterile) x1</div>
+                    <div class="checklist-item">Eye Speculum (Barraquer or similar - optional) x1</div>
+                    
+                    <h5 style="margin-top:15px;">Drawer 1b: Pericardiocentesis (Right)</h5>
+                    <div class="checklist-item">Chlorhexidine applicator (2% in 70% Alcohol) x1</div>
+                    <div class="checklist-item">Sterile Drape (Large/Impervious) x1</div>
+                    <div class="checklist-item"><strong>Spinal Needle</strong> (18G or 16G, >8cm length) x1</div>
+                    <div class="checklist-item">Syringe (20ml, Luer Lock) x1</div>
+                    <div class="checklist-item">Syringe (50ml, Luer Lock) x1</div>
+                    <div class="checklist-item">3-Way Tap x1</div>
+                    <div class="checklist-item">Scalpel (Size 11) x1</div>
+                    <div class="checklist-item">ECG Electrode + Crocodile clip cable (for guidance) x1</div>
+                </div>
+
+                <!-- Drawer 2 -->
+                <div class="checklist-group">
+                    <h5>Drawer 2a: MaxFax / Major Haemorrhage (Left)</h5>
+                    <div class="checklist-item"><strong>Rapid Rhino</strong> (7.5cm / Anterior) x2</div>
+                    <div class="checklist-item"><strong>Rapid Rhino</strong> (10cm / Posterior) x2</div>
+                    <div class="checklist-item">Bite Block (Standard Box) x1</div>
+                    <div class="checklist-item">McKesson Mouth Props (Rubber blocks, set) x1</div>
+                    <div class="checklist-item">Magill Forceps (Adult) x1</div>
+                    <div class="checklist-item">Yankauer Suction (Rigid) x1</div>
+                    <div class="checklist-item">Clinical Headtorch (with spare batteries) x1</div>
+
+                    <h5 style="margin-top:15px;">Drawer 2b: Escharotomy (Right)</h5>
+                    <div class="checklist-item">Scalpel (Size 22 or 10) x2</div>
+                    <div class="checklist-item">Heavy Duty Scissors (Tuff Cuts) OR Diathermy Pencil x1</div>
+                    <div class="checklist-item">Chlorhexidine Spray/Applicator x1</div>
+                    <div class="checklist-item">Large Sterile Absorbent Dressing Pads (e.g. 20x20cm) x2</div>
+                    <div class="checklist-item">Surgical Marker Pen x1</div>
+                </div>
+
+                <!-- Drawer 3 -->
+                <div class="checklist-group">
+                    <h5>Drawer 3a: Access (Left)</h5>
+                    <div class="checklist-item">EZ-IO Drill (Power Driver) x1</div>
+                    <div class="checklist-item">EZ-IO Needles (1x Pink 15mm, 1x Blue 25mm, 1x Yellow 45mm)</div>
+                    <div class="checklist-item"><strong>Central Line Kit</strong> (Multi-lumen, Standard) x1</div>
+                    <div class="checklist-item">Femoral / Dialysis Line Kit (Large Bore) x1</div>
+                    <div class="checklist-item">Pressure Infuser Bags (500ml/1000ml) x2</div>
+                    <div class="checklist-item">Rapid Infuser Giving Set (Tubing only) x1</div>
+
+                    <h5 style="margin-top:15px;">Drawer 3b: Spare / Misc (Right)</h5>
+                    <div class="checklist-item">Skin Stapler (Disposable) x1</div>
+                    <div class="checklist-item">Suture: 0-Prolene x1</div>
+                    <div class="checklist-item">Suture: 2-0 Silk x1</div>
+                    <div class="checklist-item">Sterile Gloves (Pairs: 6.5, 7.0, 7.5, 8.0) x2 each</div>
+                    <div class="checklist-item">Spare Scalpels (Size 10, 11, 15) x1 each</div>
+                </div>
+
+                <!-- Drawer 4 -->
+                <div class="checklist-group">
+                    <h5>Drawer 4: Chest Drain / Thoracostomy</h5>
+                    <div class="checklist-item"><strong>Surgical Chest Drain Kit</strong> (Complete sterile pack) x2</div>
+                    <div class="checklist-item">Finger Thoracostomy Pack (Scalpel + Curved Forceps) x2</div>
+                    <div class="checklist-item">Sterile Water (500ml Screw top) x1</div>
+                    <div class="checklist-item">Chest Drain Bottles / Atrium Units x2</div>
+                    <div class="checklist-item">Sleek Tape / Drain Fixation Dressing x1</div>
+                </div>
+
+                <!-- Drawer 5 -->
+                <div class="checklist-group">
+                    <h5>Drawer 5: Resuscitative Hysterotomy</h5>
+                    <div class="checklist-item">Scalpel (Large / Size 22) x1</div>
+                    <div class="checklist-item">Mayo Scissors (Large, Curved) x1</div>
+                    <div class="checklist-item">Spencer Wells Clamps (Large) x2</div>
+                    <div class="checklist-item">Needle Holder x1</div>
+                    <div class="checklist-item">Umbilical Cord Clamps x2</div>
+                    <div class="checklist-item">Urinary Catheter (Foley) + Urometer Bag x1</div>
+                    <div class="checklist-item">Neonatal Resus Towel x1</div>
+                    <div class="checklist-item">Large Absorbent Pad (Green sheet) x1</div>
+                </div>
+
+                <!-- Drawer 6 -->
+                <div class="checklist-group">
+                    <h5>Drawer 6: Emergency Thoracotomy</h5>
+                    <div class="checklist-item"><strong>Finochietto Rib Spreader</strong> x1</div>
+                    <div class="checklist-item">Gigli Saw (Wire) + Handles OR Rib Shears x1</div>
+                    <div class="checklist-item">Lebsche Knife (Sternal Chisel) + Mallet (Optional) x1</div>
+                    <div class="checklist-item">Bonney's Toothed Forceps x1</div>
+                    <div class="checklist-item"><strong>Satinsky Clamp</strong> (Large Vascular/Aortic Clamp) x1</div>
+                    <div class="checklist-item">Long Needle Holder x1</div>
+                    <div class="checklist-item">Large Abdominal Swabs (pack of 5, ray-tec marked) x1</div>
+                    <div class="checklist-item">Internal Defibrillator Paddles (Sterile) x1</div>
+                </div>
+
+                <div class="page-break"></div>
+
+                <h3>PART B: ORDERING CATEGORIES</h3>
+                <p><em>For Pharmacy and Procurement Teams.</em></p>
+
+                <h4>1. Pharmacy (Drugs & Fluids)</h4>
+                <table class="order-table">
+                    <tr><th>Item</th><th>Quantity</th><th>Notes</th></tr>
+                    <tr><td>Lidocaine 1% or 2% with Adrenaline (5ml)</td><td>5 vials</td><td>Drawer 1</td></tr>
+                    <tr><td>Sterile Water (500ml Bottle)</td><td>1 bottle</td><td>Drawer 4</td></tr>
+                    <tr><td>Chlorhexidine Applicator (2%)</td><td>5 units</td><td>Drawers 1, 2</td></tr>
+                </table>
+
+                <h4>2. Sterile Consumables (General Stores)</h4>
+                <table class="order-table">
+                    <tr><th>Item</th><th>Quantity</th><th>Notes</th></tr>
+                    <tr><td><strong>Rapid Rhino 7.5cm (Anterior)</strong></td><td>2</td><td><strong>High Priority</strong></td></tr>
+                    <tr><td><strong>Rapid Rhino 10cm (Posterior)</strong></td><td>2</td><td><strong>High Priority</strong></td></tr>
+                    <tr><td>Chest Drain Kit (Surgical / Seldinger)</td><td>2</td><td></td></tr>
+                    <tr><td>Drain Bottles (Underwater Seal)</td><td>2</td><td></td></tr>
+                    <tr><td>Central Line Kit (Multi-lumen)</td><td>1</td><td></td></tr>
+                    <tr><td>Dialysis/Femoral Line Kit</td><td>1</td><td></td></tr>
+                    <tr><td>Urinary Catheter + Bag</td><td>1</td><td></td></tr>
+                    <tr><td>EZ-IO Needles (Pink/Blue/Yellow)</td><td>1 set</td><td></td></tr>
+                    <tr><td>Scalpels (Size 10, 11, 15, 22)</td><td>Box of each</td><td></td></tr>
+                    <tr><td>Sutures (0-Prolene, 2-0 Silk)</td><td>Box of each</td><td></td></tr>
+                    <tr><td>Skin Stapler</td><td>1</td><td></td></tr>
+                </table>
+
+                <h4>3. Instruments (CSSD / Single Use Packs)</h4>
+                <table class="order-table">
+                    <tr><th>Item</th><th>Quantity</th><th>Notes</th></tr>
+                    <tr><td><strong>Lateral Canthotomy Set</strong></td><td>1</td><td>Must contain: Mosquito (Straight), Iris Scissors, Adson Forceps</td></tr>
+                    <tr><td><strong>Hysterotomy (C-Section) Set</strong></td><td>1</td><td>Basic set: Scalpel handle, Mayo Scissors, Large Clamps</td></tr>
+                    <tr><td><strong>Thoracotomy Set</strong></td><td>1</td><td>Must contain: Rib Spreader, Satinsky Clamp, Gigli Saw/Shears</td></tr>
+                    <tr><td>Spinal Needle (18G/16G)</td><td>5</td><td>For Pericardiocentesis</td></tr>
+                </table>
+
+                <h4>4. Hardware / Medical Engineering</h4>
+                <table class="order-table">
+                    <tr><th>Item</th><th>Quantity</th><th>Notes</th></tr>
+                    <tr><td><strong>Finochietto Rib Spreader</strong></td><td>1</td><td>Check mechanism</td></tr>
+                    <tr><td><strong>Internal Defibrillator Paddles</strong></td><td>1</td><td>Must match Departmental Defib (e.g. Zoll/Philips)</td></tr>
+                    <tr><td>EZ-IO Driver</td><td>1</td><td>Check Battery</td></tr>
+                </table>
             </div>
         </section>
 
