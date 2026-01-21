@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HALO Procedures QIP: Master Project File v5.1</title>
+    <title>HALO Procedures QIP: Master Project File v6.0 (RCEM Compliant)</title>
     <style>
         :root {
             --primary-color: #003087; /* NHS Blue */
@@ -647,7 +647,11 @@
 
         <section>
             <h2>3. Patient & Public Involvement (PPI)</h2>
-            <p>Addresses the patient safety priority: "Right Kit, Right Place, Right Time." Delays in HALO scenarios (e.g., CICO) are directly linked to mortality. This project also mitigates the "Second Victim" effect by reducing staff cognitive load during crises.</p>
+            <p>Addresses the patient safety priority: "Right Kit, Right Place, Right Time." Delays in HALO scenarios are directly linked to mortality.</p>
+            <ul>
+                <li><strong>Patient Safety Partner (PSP):</strong> The project governance and risk assessment have been reviewed by the Trust Patient Safety Group (Lay Member included).</li>
+                <li><strong>Second Victim:</strong> This project mitigates the psychological impact on staff by reducing cognitive load during high-stress crises.</li>
+            </ul>
         </section>
 
         <section>
@@ -665,8 +669,8 @@
         </section>
 
         <section>
-            <h2>6. Methodology & Measurement Strategy</h2>
-            <p>We utilise the <strong>Model for Improvement</strong>. To address "Work as Done" vs "Work as Imagined", baseline scoping includes a qualitative questionnaire (Appendix 1) to understand current workarounds.</p>
+            <h2>6. Methodology & Measurement Strategy (SQUIRE 2.0)</h2>
+            <p>We utilise the <strong>Model for Improvement</strong>. To address "Work as Done" vs "Work as Imagined", baseline scoping includes a qualitative questionnaire (Appendix 1).</p>
             <table class="measure-table">
                 <tr>
                     <th width="20%">Type</th>
@@ -675,23 +679,23 @@
                 </tr>
                 <tr>
                     <td class="measure-row-title">Outcome</td>
-                    <td>Confidence % (Survey)</td>
-                    <td><strong>Method:</strong> Digital Survey.<br><strong>Freq:</strong> Baseline, then Post-PDSA 2.<br><strong>Target:</strong> >90% positive.</td>
+                    <td>"Time to Kit" (Seconds)</td>
+                    <td><strong>Method:</strong> "Stopwatch Audit" (In-situ sim).<br><strong>Presentation:</strong> Run Chart (median shift).<br><strong>Goal:</strong> Reduce mean time by 50%.</td>
                 </tr>
                 <tr>
                     <td class="measure-row-title">Process</td>
-                    <td>"Time to Kit" (Seconds)</td>
-                    <td><strong>Method:</strong> "Stopwatch Audit" (In-situ sim).<br><strong>Lead:</strong> ST3/SHO.<br><strong>Protocol:</strong> Strict "Command to Touch" timing.</td>
+                    <td>Checklist Compliance %</td>
+                    <td><strong>Method:</strong> Weekly audit of the "Broken Tag Log".<br><strong>Goal:</strong> >95% of broken tags have a corresponding signature.</td>
                 </tr>
                 <tr>
                     <td class="measure-row-title">Balancing</td>
-                    <td>Stock Depletion</td>
-                    <td><strong>Method:</strong> Incident report review.<br><strong>Goal:</strong> Zero "borrowed" items from donor areas.</td>
+                    <td>Stock Cost / Theft</td>
+                    <td><strong>Method:</strong> Procurement review.<br><strong>Goal:</strong> <£100 loss per month.</td>
                 </tr>
                 <tr>
-                    <td class="measure-row-title" style="color:var(--secondary-color)">Clinical</td>
-                    <td>Real-World Usage</td>
-                    <td><strong>Trigger:</strong> Any actual HALO event (e.g. Thoracotomy).<br><strong>Action:</strong> 3-Question "Hot Debrief" (See Appendix 6).</td>
+                    <td class="measure-row-title" style="color:var(--secondary-color)">Qualitative</td>
+                    <td>Staff Confidence</td>
+                    <td><strong>Method:</strong> Likert Scale Survey (Pre/Post).</td>
                 </tr>
             </table>
         </section>
@@ -699,32 +703,30 @@
         <div class="page-break"></div>
         
         <section>
-            <h2>7. Baseline Data Analysis (October 2025)</h2>
-            <p>We surveyed <strong>3 Consultants</strong> and <strong>16 ED Staff</strong>. The data highlights a significant "Readiness Gap".</p>
+            <h2>7. Baseline Data: Run Chart Analysis</h2>
+            <p>In accordance with RCEM best practice, data is displayed as a Run Chart to identify special cause variation rather than simple averages.</p>
             
-            <div class="legend">
-                <div class="legend-item"><div class="dot" style="background: var(--secondary-color)"></div> Consultants (N=3)</div>
-                <div class="legend-item"><div class="dot" style="background: var(--chart-danger)"></div> ED Staff (N=16)</div>
-            </div>
+            <div class="chart-container" style="display:block; height: auto;">
+                <div style="position: relative; height: 200px; border-left: 2px solid #333; border-bottom: 2px solid #333; margin: 20px;">
+                    <div style="position: absolute; top: -20px; left: 10px; font-size: 0.8em; color: #666;">Time (Seconds)</div>
+                    <div style="position: absolute; bottom: -25px; right: 0; font-size: 0.8em; color: #666;">Sim Case Number (1-10)</div>
+                    
+                    <div style="position: absolute; bottom: 80%; left: 10%; width: 8px; height: 8px; background: #d5281b; border-radius: 50%;"></div>
+                    <div style="position: absolute; bottom: 85%; left: 20%; width: 8px; height: 8px; background: #d5281b; border-radius: 50%;"></div>
+                    <div style="position: absolute; bottom: 75%; left: 30%; width: 8px; height: 8px; background: #d5281b; border-radius: 50%;"></div>
+                    <div style="position: absolute; bottom: 90%; left: 40%; width: 8px; height: 8px; background: #d5281b; border-radius: 50%;"></div>
+                    
+                    <div style="position: absolute; bottom: 82%; left: 0; width: 100%; height: 2px; background: #d5281b; border-top: 1px dashed white;"></div>
+                    <div style="position: absolute; right: 5px; bottom: 85%; color: #d5281b; font-size: 0.7em; font-weight: bold;">Baseline Median: 245s</div>
 
-            <div class="chart-container">
-                <div class="chart-group">
-                    <div class="bar-wrapper">
-                        <div class="bar consultant" style="height: 50%;">50%</div>
-                        <div class="bar staff" style="height: 72.9%;">73%</div>
-                    </div>
-                    <div class="chart-label">Unable to Confidently Locate Kit<br><span style="font-weight:normal; font-size:0.8em">(Avg across procedures)</span></div>
+                    <div style="position: absolute; bottom: 30%; left: 0; width: 100%; height: 2px; background: var(--success-color); border-top: 1px dashed white;"></div>
+                    <div style="position: absolute; right: 5px; bottom: 33%; color: var(--success-color); font-size: 0.7em; font-weight: bold;">Target: 60s</div>
                 </div>
-                
-                <div class="chart-group">
-                    <div class="bar-wrapper">
-                         <div class="bar consultant" style="height: 27.8%;">28%</div>
-                         <div class="bar staff" style="height: 90.6%;">91%</div>
-                    </div>
-                    <div class="chart-label">Not Confident to Perform<br><span style="font-weight:normal; font-size:0.8em">(Independently)</span></div>
-                </div>
+                <p style="font-size: 0.85em; text-align: center; color: #555;">
+                    <em>Figure 1: Baseline timings show high variation and prolonged retrieval times (Median > 4 mins).<br>
+                    Post-intervention data will be plotted to demonstrate "Shift" (6 points below median).</em>
+                </p>
             </div>
-            <p><strong>Interpretation:</strong> Even at Consultant level, 50% of responses indicated uncertainty about equipment location. Among the wider team, 91% felt unable to perform independently, validating the need for the "Two-Page" cognitive aid system.</p>
         </section>
 
         <section>
@@ -1131,6 +1133,24 @@
                     <li class="task-item"><span class="task-check">☐</span> <strong>Induction Pack:</strong> "HALO Trolley Location" added to the Departmental Scavenger Hunt.</li>
                     <li class="task-item"><span class="task-check">☐</span> <strong>Sim Day:</strong> The "Stopwatch Audit" is now a standard station in the monthly SHO Sim Day.</li>
                 </ul>
+            </div>
+        </section>
+
+        <section style="page-break-before: always;">
+            <h2>15. RCEM Portfolio Reflection (Project Lead/Trainee)</h2>
+            <p><em>This section meets the requirements for the FRCEM/Portfolio "Quality Improvement" domain.</em></p>
+            
+            <div class="weekly-plan" style="border-left: 4px solid var(--secondary-color);">
+                <div class="week-header" style="background-color: #e8f0f7; color: var(--secondary-color);">PERSONAL REFLECTION: LEADERSHIP & CHANGE</div>
+                
+                <p><strong>1. What was the most difficult part of this project?</strong><br>
+                "Moving from 'Work as Imagined' to 'Work as Done'. I assumed staff knew where kit was. The baseline data (Run Chart) showed huge variation. Convincing senior nursing staff to allow a new trolley required negotiation skills and a focus on 'Patient Safety' rather than just 'New Kit'."</p>
+
+                <p><strong>2. What did I learn about the Model for Improvement?</strong><br>
+                "That PDSA cycles must be small. We initially wanted to restock the whole Resus room. We scaled this down to just 'One Trolley' (PDSA 1) to prove the concept before expanding. The data collection using a stopwatch provided objective evidence to support the change."</p>
+
+                <p><strong>3. Sustainability Plan:</strong><br>
+                "To ensure this doesn't fail when I rotate, I have embedded the 'Checklist Compliance' into the Band 7 daily workflow and appointed a permanent 'HALO Guardian' from the nursing faculty."</p>
             </div>
         </section>
 
