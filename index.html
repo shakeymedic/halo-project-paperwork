@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HALO Procedures QIP: Master Project File v8.0 (Governance Approved)</title>
+    <title>HALO Procedures QIP: Master Project File v9.0 (Governance Approved)</title>
     <style>
         :root {
-            --primary-color: #003087; /* NHS Blue */
+            --primary-color: #003087;
             --secondary-color: #005eb8;
             --text-color: #212b32;
             --bg-color: #f0f4f5;
@@ -30,7 +30,6 @@
             padding: 20px;
         }
 
-        /* Paper Layout */
         .report-container {
             max-width: 210mm;
             margin: 0 auto;
@@ -40,7 +39,6 @@
             min-height: 297mm;
         }
 
-        /* Typography */
         h1, h2, h3, h4 {
             color: var(--primary-color);
             margin-top: 1.2em;
@@ -79,7 +77,6 @@
             margin-bottom: 6px;
         }
 
-        /* UI Controls */
         .ui-controls {
             position: fixed;
             top: 20px;
@@ -103,7 +100,6 @@
             background-color: var(--secondary-color);
         }
 
-        /* --- VISUAL CHART STYLES --- */
         .chart-container {
             display: flex;
             justify-content: space-around;
@@ -174,7 +170,6 @@
         .legend-item { display: flex; align-items: center; gap: 5px; }
         .dot { width: 12px; height: 12px; border-radius: 2px; }
 
-        /* --- DRIVER DIAGRAM --- */
         .driver-diagram {
             display: flex;
             gap: 0;
@@ -237,7 +232,6 @@
             font-weight: bold;
         }
 
-        /* --- MEASUREMENT TABLE --- */
         .measure-table {
             width: 100%;
             border-collapse: collapse;
@@ -261,7 +255,6 @@
             color: var(--primary-color);
         }
 
-        /* --- FISHBONE SVG STYLES --- */
         .fishbone-container {
             width: 100%;
             margin: 15px 0;
@@ -281,7 +274,6 @@
         .problem-box { fill: var(--primary-color); rx: 4; }
         .problem-text { fill: white; font-weight: bold; font-size: 11px; text-anchor: middle; }
 
-        /* --- STAKEHOLDER MATRIX --- */
         .stakeholder-matrix {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -313,7 +305,6 @@
             margin: 0;
         }
 
-        /* --- GANTT CHART STYLES --- */
         .gantt-container {
             margin: 20px 0;
             overflow-x: auto;
@@ -342,7 +333,7 @@
             background-color: var(--secondary-color);
             color: var(--secondary-color);
             border-radius: 4px;
-            font-size: 0.1px; /* Hide text inside bar */
+            font-size: 0.1px; 
             height: 15px;
         }
         .gantt-milestone {
@@ -357,7 +348,6 @@
         .gantt-live { background-color: #1565c0; }
         .gantt-audit { background-color: #ffb74d; }
 
-        /* --- WEEKLY CHECKLIST --- */
         .weekly-plan {
             margin-top: 15px;
         }
@@ -393,7 +383,6 @@
             font-weight: bold;
         }
 
-        /* --- PLAYBOOK BOX --- */
         .playbook-box {
             background: #fff3cd;
             border: 1px solid #ffeeba;
@@ -416,7 +405,6 @@
             border-left: 3px solid #856404;
         }
 
-        /* --- DATA COLLECTION TOOL --- */
         .data-tool-sheet {
             border: 2px solid #333;
             padding: 20px;
@@ -441,7 +429,6 @@
         }
         .data-table th { background: #eee; }
         
-        /* --- TROLLEY DIAGRAM STYLES --- */
         .trolley-diagram-container {
             display: flex;
             justify-content: space-around;
@@ -469,7 +456,7 @@
             height: 20px;
             background: #333;
             border-radius: 50%;
-            box-shadow: 140px 0 0 #333; /* Second wheel */
+            box-shadow: 140px 0 0 #333; 
         }
 
         .drawer {
@@ -489,7 +476,6 @@
             line-height: 1.1;
         }
 
-        /* Split Drawer Style */
         .drawer.split {
             display: flex;
             padding: 0;
@@ -507,9 +493,9 @@
         }
 
         .drawer::before {
-            content: none; /* Remove default handle for split drawers */
+            content: none; 
         }
-        /* Custom handles for regular drawers */
+        
         .drawer:not(.split)::before {
             content: "";
             position: absolute;
@@ -520,15 +506,14 @@
             border-radius: 2px;
         }
 
-        /* Colour Coding */
-        .bg-canthotomy { border-left: 5px solid #d32f2f; } /* Red */
-        .bg-maxfax { border-left: 5px solid #fbc02d; } /* Yellow */
-        .bg-escharotomy { border-right: 5px solid #e64a19; } /* Orange */
-        .bg-pericard { border-right: 5px solid #8e24aa; } /* Purple - RIGHT SIDE */
-        .bg-chest { border-left: 5px solid #0288d1; } /* Blue */
-        .bg-thoracotomy { border-left: 5px solid #1976d2; } /* Dark Blue */
-        .bg-hysterotomy { border-left: 5px solid #c2185b; } /* Pink */
-        .bg-access { border-left: 5px solid #607d8b; } /* Blue Grey */
+        .bg-canthotomy { border-left: 5px solid #d32f2f; } 
+        .bg-maxfax { border-left: 5px solid #fbc02d; } 
+        .bg-escharotomy { border-right: 5px solid #e64a19; } 
+        .bg-pericard { border-right: 5px solid #8e24aa; } 
+        .bg-chest { border-left: 5px solid #0288d1; } 
+        .bg-thoracotomy { border-left: 5px solid #1976d2; } 
+        .bg-hysterotomy { border-left: 5px solid #c2185b; } 
+        .bg-access { border-left: 5px solid #607d8b; } 
 
         .drawer-detail-view {
             flex-grow: 1;
@@ -551,7 +536,7 @@
             grid-template-columns: 1fr 2fr;
             gap: 10px;
             height: 150px;
-            border: 2px solid #333; /* Drawer boundary */
+            border: 2px solid #333; 
             padding: 10px;
             background: #fafafa;
         }
@@ -587,7 +572,6 @@
             color: #1565c0;
         }
 
-        /* --- REFLECTION BOX --- */
         .reflection-box {
             background-color: var(--highlight-bg);
             border-left: 4px solid var(--primary-color);
@@ -597,7 +581,6 @@
             page-break-inside: avoid;
         }
 
-        /* --- ENGAGEMENT LOG STYLES --- */
         .engagement-log {
             margin: 15px 0;
         }
@@ -639,7 +622,6 @@
             margin-top: 4px;
         }
 
-        /* Print Specifics */
         @media print {
             body { background-color: white; padding: 0; }
             .report-container { width: 100%; max-width: none; margin: 0; padding: 0; box-shadow: none; }
@@ -679,41 +661,42 @@
             <strong>Version History:</strong>
             <table style="width:100%; font-size:0.95em; border:none; margin:5px 0 0 0;">
                 <tr style="background:none;"><td style="border:none; padding:2px; width:15%;">v7.0</td><td style="border:none; padding:2px; width:20%;">Oct 2025</td><td style="border:none; padding:2px;">Initial master project file.</td></tr>
-                <tr style="background:none;"><td style="border:none; padding:2px;">v8.0</td><td style="border:none; padding:2px;">Feb 2026</td><td style="border:none; padding:2px;">Stakeholder engagement log added. Evidence base, references, limitations, dissemination plan, and run chart methodology formalised. Drawer 3a updated to Central Access. RCEM QIAT compliance review.</td></tr>
+                <tr style="background:none;"><td style="border:none; padding:2px;">v8.0</td><td style="border:none; padding:2px;">Feb 2026</td><td style="border:none; padding:2px;">Stakeholder engagement log added. Evidence base, references, limitations, dissemination plan, and run chart methodology formalised.</td></tr>
+                <tr style="background:none;"><td style="border:none; padding:2px;">v9.0</td><td style="border:none; padding:2px;">Apr 2026</td><td style="border:none; padding:2px;">PDSA cycles reordered. Trolley quote confirmed. Nursing tag system agreed. HALO booklet distributed for feedback.</td></tr>
             </table>
         </div>
 
         <section>
             <h2>1. Executive Summary</h2>
-            <p>Preliminary scoping (October 2025) identified a critical safety variance. While centralised equipment (e.g., the Central Line Trolley) was located in <strong>91 seconds</strong>, dispersed HALO equipment (e.g., Thoracotomy kit) took <strong>over 5 minutes</strong> to retrieve. This project replicates the successful 'Central Line' storage model for all HALO procedures to bridge this safety gap. Using the Model for Improvement, we implement a dual-arm strategy: (1) <strong>Infrastructure:</strong> Centralising dispersed equipment into a dedicated HALO Trolley, and (2) <strong>Cognitive Support:</strong> Deploying a "Two-Page" Quick Reference Handbook (QRH) guide system.</p>
+            <p>Preliminary scoping (October 2025) identified a critical safety variance. While centralised equipment (e.g. the Central Line Trolley) was located in <strong>91 seconds</strong>, dispersed HALO equipment (e.g. Thoracotomy kit) took <strong>over 5 minutes</strong> to retrieve. This project replicates the successful 'Central Line' storage model for all HALO procedures to bridge this safety gap. Using the Model for Improvement, we implement a dual-arm strategy. First, cognitive support via a Quick Reference Handbook (QRH) guide system. Second, infrastructure improvements by centralising dispersed equipment into a dedicated HALO Trolley.</p>
         </section>
 
         <section>
             <h2>2. Governance & Safety Standards (LOCSSIPs)</h2>
             <p>This project functions under the framework of <strong>NatSSIPs</strong> (National Safety Standards for Invasive Procedures). The HALO Trolley acts as the physical infrastructure to support the Departmental <strong>LOCSSIPs</strong> (Local Safety Standards).</p>
             <ul>
-                <li><strong>Compliance:</strong> The "Two-Page" QRH guides serve as the immediate safety checklist required by LOCSSIPs.</li>
-                <li><strong>IPC:</strong> Trolley design and location to be vetted by the Infection Prevention Control Lead (via Sarah Hayward) to ensure cleaning compliance.</li>
-                <li><strong>Oversight:</strong> Discrepancies in stock (e.g., missing HALO trolley equipment) will be reported via Datix to the Patient Safety Team.</li>
+                <li><strong>Compliance:</strong> The QRH guides serve as the immediate safety checklist required by LOCSSIPs.</li>
+                <li><strong>IPC:</strong> Trolley design and location vetted by the Infection Prevention Control Lead to ensure cleaning compliance.</li>
+                <li><strong>Oversight:</strong> Discrepancies in stock will be reported via Datix to the Patient Safety Team.</li>
             </ul>
-            <p><strong>Ethics & Registration:</strong> This project is classified as a Quality Improvement initiative in accordance with the NHS Health Research Authority (HRA) decision tool and does not constitute research. No patient-identifiable data is collected at any stage; all timing data is anonymised at source and linked only to staff role (not individual). Staff participation in the "Stopwatch Audit" and knowledge assessments is voluntary. No formal ethical approval from a Research Ethics Committee (REC) is required. The project has been registered with the Trust Clinical Audit & Effectiveness Department in accordance with local governance requirements (Registration No: [Insert]).</p>
+            <p><strong>Ethics & Registration:</strong> This project is classified as a Quality Improvement initiative in accordance with the NHS Health Research Authority (HRA) decision tool and does not constitute research. No patient-identifiable data is collected at any stage. All timing data is anonymised at source and linked only to staff role. Staff participation in the "Stopwatch Audit" and knowledge assessments is voluntary. No formal ethical approval from a Research Ethics Committee (REC) is required. The project has been registered with the Trust Clinical Audit & Effectiveness Department in accordance with local governance requirements.</p>
         </section>
 
         <section>
             <h2>3. Patient & Public Involvement (PPI)</h2>
-            <p>Addresses the patient safety priority: "Right Kit, Right Place, Right Time." Delays in HALO scenarios are directly linked to mortality.</p>
+            <p>Addresses the patient safety priority: "Right Kit, Right Place, Right Time". Delays in HALO scenarios are directly linked to mortality.</p>
             <ul>
-                <li><strong>Patient Safety Partner (PSP):</strong> The project governance and risk assessment have been reviewed by the Trust Patient Safety Group (Lay Member included).</li>
+                <li><strong>Patient Safety Partner (PSP):</strong> The project governance and risk assessment have been reviewed by the Trust Patient Safety Group.</li>
                 <li><strong>Second Victim:</strong> This project mitigates the psychological impact on staff by reducing cognitive load during high-stress crises.</li>
             </ul>
         </section>
 
         <section>
             <h2>4. Problem & Background</h2>
-            <p>HALO procedures require immediate action. Current equipment storage is fragmented (Ophthalmology store, Obs/Gynae box, Resus store), increasing cognitive friction. A pilot audit (N=3) demonstrated that finding "scattered" stock takes <strong>>300 seconds</strong> (5 mins), whereas "trolley-based" stock takes just <strong>91 seconds</strong>. The infrastructure directly dictates retrieval speed, regardless of clinician seniority.</p>
+            <p>HALO procedures require immediate action. Current equipment storage is fragmented across multiple stores. This increases cognitive friction. A pilot audit (N=3) demonstrated that finding "scattered" stock takes <strong>>300 seconds</strong> (5 mins), whereas "trolley-based" stock takes just <strong>91 seconds</strong>. The infrastructure directly dictates retrieval speed, regardless of clinician seniority.</p>
             
             <h3>4b. Evidence Base</h3>
-            <p>The concept of cognitive offloading through standardised equipment organisation is well-established in high-reliability industries. In healthcare, the "Resuscitation Trolley" model has been shown to reduce time-to-intervention in cardiac arrest scenarios. The Royal College of Emergency Medicine (RCEM) Quality Standards for Major Trauma (2024) emphasise the importance of immediately accessible procedural equipment. The National Confidential Enquiry into Patient Outcome and Death (NCEPOD) has repeatedly highlighted equipment availability as a contributory factor in suboptimal care during emergency procedures. The "Two-Page" QRH system draws on principles from aviation checklist design and the NHS Emergency Department Checklist programme, where structured cognitive aids reduce error rates during high-acuity, low-frequency events.</p>
+            <p>The concept of cognitive offloading through standardised equipment organisation is well-established in high-reliability industries. In healthcare, the "Resuscitation Trolley" model reduces time-to-intervention in cardiac arrest scenarios. The Royal College of Emergency Medicine (RCEM) Quality Standards for Major Trauma (2024) emphasise the importance of immediately accessible procedural equipment. The National Confidential Enquiry into Patient Outcome and Death (NCEPOD) repeatedly highlights equipment availability as a contributory factor in suboptimal care during emergency procedures. The QRH system draws on principles from aviation checklist design and the NHS Emergency Department Checklist programme.</p>
         </section>
 
         <section>
@@ -727,7 +710,7 @@
 
         <section>
             <h2>6. Methodology & Measurement Strategy (SQUIRE 2.0)</h2>
-            <p>We utilise the <strong>Model for Improvement</strong>. To address "Work as Done" vs "Work as Imagined", baseline scoping includes a qualitative questionnaire (Appendix 1). A pre- and post-intervention knowledge assessment of procedural skills is being conducted by the SHO Lead (Dr Maida) to provide objective evidence of the QRH's educational impact on clinician preparedness.</p>
+            <p>We utilise the <strong>Model for Improvement</strong>. To address "Work as Done" vs "Work as Imagined", baseline scoping includes a qualitative questionnaire. A pre-intervention and post-intervention knowledge assessment of procedural skills provides objective evidence of the QRH's educational impact on clinician preparedness.</p>
             <table class="measure-table">
                 <tr>
                     <th width="20%">Type</th>
@@ -737,12 +720,12 @@
                 <tr>
                     <td class="measure-row-title">Outcome</td>
                     <td>"Time to Kit" (Seconds)</td>
-                    <td><strong>Method:</strong> "Stopwatch Audit" (In-situ sim).<br><strong>Control:</strong> Timer starts at 'Scenario Declaration' (e.g., "Traumatic Arrest") to capture cognitive load and mitigate Hawthorne effect.<br><strong>Goal:</strong> Reduce mean time by 50%.</td>
+                    <td><strong>Method:</strong> "Stopwatch Audit" (In-situ sim).<br><strong>Control:</strong> Timer starts at 'Scenario Declaration' (e.g. "Traumatic Arrest") to capture cognitive load and mitigate Hawthorne effect.<br><strong>Goal:</strong> Reduce mean time by 50%.</td>
                 </tr>
                 <tr>
                     <td class="measure-row-title">Outcome</td>
                     <td>Procedural Knowledge (Pre/Post)</td>
-                    <td><strong>Method:</strong> Structured knowledge assessment administered before and after QRH deployment (Led by Dr Maida, SHO).<br><strong>Analysis:</strong> Wilcoxon signed-rank test (or paired t-test if data is normally distributed) to assess statistical significance of score changes.<br><strong>Goal:</strong> Demonstrate statistically significant improvement in procedural knowledge scores.</td>
+                    <td><strong>Method:</strong> Structured knowledge assessment administered before and after QRH deployment.<br><strong>Analysis:</strong> Wilcoxon signed-rank test to assess statistical significance of score changes.<br><strong>Goal:</strong> Demonstrate statistically significant improvement in procedural knowledge scores.</td>
                 </tr>
                 <tr>
                     <td class="measure-row-title">Process</td>
@@ -769,17 +752,17 @@
             
             <div class="reflection-box" style="margin-bottom: 20px; border-left-color: #d5281b; background-color: #fff5f5;">
                 <strong>PILOT SCOPING (PROOF OF CONCEPT)</strong><br>
-                We compared "Time to Kit" for existing centralised stock vs. dispersed stock:
+                We compared "Time to Kit" for existing centralised stock vs dispersed stock:
                 <ul>
                     <li><strong>Control (Central Line Trolley):</strong> 91 Seconds (Safe)</li>
-                    <li><strong>Test (Thoracotomy - Dispersed):</strong> >5 Minutes (Unsafe)</li>
+                    <li><strong>Test (Thoracotomy, Dispersed):</strong> >5 Minutes (Unsafe)</li>
                 </ul>
                 <em>Conclusion: Centralising equipment reduces retrieval time by >60%.</em>
             </div>
 
-            <p>In accordance with RCEM best practice, data is displayed as a Run Chart to identify special cause variation. <strong>Baseline data combines Pilot (N=3) and Phase 1 (N=10) timings for statistical stability (Total N=13).</strong> A minimum of 10 data points is recommended by the Institute for Healthcare Improvement (IHI) for reliable run chart interpretation; N=13 exceeds this threshold and provides a stable baseline median.</p>
+            <p>In accordance with RCEM best practice, data is displayed as a Run Chart to identify special cause variation. Baseline data combines Pilot and Phase 1 timings for statistical stability (Total N=13). A minimum of 10 data points is recommended by the Institute for Healthcare Improvement (IHI) for reliable run chart interpretation.</p>
             
-            <p><strong>Run Chart Interpretation Rules (IHI):</strong> Non-random variation is identified by: (1) <strong>Shift</strong> — 6 or more consecutive points all above or below the median; (2) <strong>Trend</strong> — 5 or more consecutive points all increasing or decreasing; (3) <strong>Too few or too many runs</strong> — assessed against the expected runs table for a given number of data points; (4) <strong>Astronomical data point</strong> — a data point that is clearly different from all others, agreed by those close to the process. If any rule is met, there is less than a 5% probability this pattern occurred by chance alone. Post-intervention, we will look specifically for a <strong>shift below the baseline median</strong> to confirm the trolley intervention has produced a sustained improvement in retrieval times.</p>
+            <p><strong>Run Chart Interpretation Rules (IHI):</strong> Non-random variation is identified by several rules. Rule 1 is a Shift: 6 or more consecutive points all above or below the median. Rule 2 is a Trend: 5 or more consecutive points all increasing or decreasing. Rule 3 involves assessing against the expected runs table. Rule 4 relates to an Astronomical data point. If any rule is met, there is less than a 5% probability this pattern occurred by chance alone. Post-intervention, we will look specifically for a shift below the baseline median to confirm the trolley intervention has produced a sustained improvement in retrieval times.</p>
             
             <div class="chart-container" style="display:block; height: auto;">
                 <div style="position: relative; height: 200px; border-left: 2px solid #333; border-bottom: 2px solid #333; margin: 20px;">
@@ -798,8 +781,7 @@
                     <div style="position: absolute; right: 5px; bottom: 33%; color: var(--success-color); font-size: 0.7em; font-weight: bold;">Target: 60s</div>
                 </div>
                 <p style="font-size: 0.85em; text-align: center; color: #555;">
-                    <em>Figure 1: Illustrative run chart showing baseline variation (4 of 13 data points plotted for visual clarity). Full N=13 dataset shows high variation and prolonged retrieval times (Median = 245s).<br>
-                    Post-intervention data will be plotted to test for non-random signals using IHI run chart rules (Shift: 6 consecutive points below baseline median).</em>
+                    <em>Figure 1: Illustrative run chart showing baseline variation. Full N=13 dataset shows high variation and prolonged retrieval times (Median = 245s).</em>
                 </p>
             </div>
         </section>
@@ -822,68 +804,67 @@
                         <td><strong>Dr Jake Turner</strong></td>
                         <td>ST6 Emergency Medicine Registrar</td>
                         <td>Project Lead. Design, implementation, analysis, and reporting.</td>
-                        <td>Lead — Ongoing</td>
+                        <td>Lead, Ongoing</td>
                     </tr>
                     <tr>
                         <td><strong>[ES Name]</strong></td>
-                        <td>Consultant EM / Educational Supervisor</td>
+                        <td>Consultant EM, Educational Supervisor</td>
                         <td>Educational oversight and QIAT sign-off.</td>
                         <td>[To confirm]</td>
                     </tr>
                     <tr>
                         <td><strong>Mr Nadeem Zia</strong></td>
-                        <td>Consultant — Trauma Lead</td>
+                        <td>Consultant, Trauma Lead</td>
                         <td>Clinical sign-off of trolley contents and QRH guides. Recommended consultant peer review.</td>
-                        <td>Approved — 18 Feb 2026</td>
+                        <td>Approved, 18 Feb 2026</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dr Safdar Iman</strong></td>
+                        <td>Consultant, Resus Lead</td>
+                        <td>Clinical endorsement and authorisation to re-allocate stock to the new trolley.</td>
+                        <td>Approved, April 2026</td>
                     </tr>
                     <tr>
                         <td><strong>Charlotte Vineham</strong></td>
                         <td>Operations Manager</td>
                         <td>Project approval. Trolley procurement and budget.</td>
-                        <td>Approved — 12 Feb 2026</td>
+                        <td>Approved, March 2026 (Quote received)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sarah Hart</strong></td>
+                        <td>Senior Sister</td>
+                        <td>Trolley location agreement. Broken tag policy and nursing team compliance.</td>
+                        <td>Approved, 26 April 2026</td>
                     </tr>
                     <tr>
                         <td><strong>Dr Maida</strong></td>
-                        <td>SHO — Junior Doctor Lead</td>
+                        <td>SHO, Junior Doctor Lead</td>
                         <td>Data collection (Stopwatch Audit). Pre/post knowledge assessment delivery.</td>
-                        <td>Allocated — 27 Jan 2026</td>
+                        <td>Allocated, 27 Jan 2026</td>
                     </tr>
                     <tr>
                         <td><strong>Jemma</strong></td>
                         <td>Emergency Department Practitioner (EDP)</td>
-                        <td>Kit review. Nursing dissemination. Checking/restocking process coordination.</td>
-                        <td>Allocated — 20 Feb 2026</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Sarah Hayward / Laken Stacey</strong></td>
-                        <td>Resus Lead Nurses (Band 7)</td>
-                        <td>Trolley location agreement. Broken tag policy. IPC compliance.</td>
-                        <td>[To engage]</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Khan Zaman</strong></td>
-                        <td>Materials Management Lead (Stores)</td>
-                        <td>Par level agreements. Pull-system restocking.</td>
-                        <td>[To engage]</td>
+                        <td>Kit review. Nursing dissemination. Checking process coordination.</td>
+                        <td>Allocated, 20 Feb 2026</td>
                     </tr>
                 </tbody>
             </table>
-            <p style="font-size:0.85em; color:#666;"><em>Note: Names in [brackets] are placeholders to be confirmed. All other entries reflect real stakeholder meetings documented in Section 8c.</em></p>
             
             <h3>Influence / Interest Matrix</h3>
             <div class="stakeholder-matrix">
                 <div class="matrix-quadrant matrix-content">
                     <span class="matrix-title q-manage">MANAGE CLOSELY</span>
                     <ul>
-                        <li><strong>Consultant Resus Lead:</strong> Clinical sign-off.</li>
-                        <li><strong>Resus Lead Nurse (Band 7):</strong> Controls space/checking.</li>
+                        <li><strong>Consultant Leads:</strong> Clinical sign-off.</li>
+                        <li><strong>Senior Sister:</strong> Controls space and checking rules.</li>
                     </ul>
                 </div>
                 <div class="matrix-quadrant matrix-content">
                     <span class="matrix-title q-satisfy">KEEP SATISFIED</span>
                     <ul>
-                        <li><strong>Unit Manager (Matron):</strong> Cost/Clutter. <em>Pitch: Cost-neutral consolidation.</em></li>
-                        <li><strong>Ops Manager:</strong> Risk/Compliance.</li>
+                        <li><strong>Unit Manager (Matron):</strong> Cost and Clutter. <em>Pitch: Cost-neutral consolidation.</em></li>
+                        <li><strong>Ops Manager:</strong> Risk and Compliance.</li>
                     </ul>
                 </div>
                 <div class="matrix-quadrant matrix-content">
@@ -903,8 +884,8 @@
         </section>
         
         <section>
-            <h2>8b. Targeted MDT Engagement Strategy (Clinical & Operational)</h2>
-            <p>Success requires specific authorisation and operational agreement from the following defined stakeholders.</p>
+            <h2>8b. Targeted MDT Engagement Strategy</h2>
+            <p>Success requires specific authorisation and operational agreement from the following stakeholders.</p>
             
             <h4 style="margin-bottom:5px; font-size:1em; color:var(--primary-color);">Part A: Clinical Operations</h4>
             <table class="measure-table">
@@ -918,17 +899,17 @@
                 <tbody>
                     <tr>
                         <td style="font-weight:bold;">Nursing / Flow</td>
-                        <td>Sarah Hayward<br>Laken Stacey (Band 7s)</td>
+                        <td>Sarah Hart</td>
                         <td>
-                            1. Agree on the physical location of the trolley (must not impede flow).<br>
-                            2. Approval for "Broken Tag" policy (nursing staff to check seals, not count individual items daily).
+                            1. Agree on the physical location of the trolley.<br>
+                            2. Approval for "Broken Tag" policy. The team that uses the kit must replace the drawer.
                         </td>
                     </tr>
                     <tr>
                         <td style="font-weight:bold;">Resus Leadership</td>
-                        <td>Nadeem Zia (Trauma Lead)<br>Safdar Iman (EM Lead)</td>
+                        <td>Nadeem Zia, Safdar Iman</td>
                         <td>
-                            1. Clinical sign-off on the "Two-Page" QRH guide content.<br>
+                            1. Clinical sign-off on the QRH guide content.<br>
                             2. Authorisation to move stock from Resus cupboards to the HALO trolley.<br>
                             3. Distribution of QRH to consultant body for feedback.
                         </td>
@@ -941,108 +922,39 @@
                             2. Support arrangement of the checking and restocking process.
                         </td>
                     </tr>
-                    <tr>
-                        <td style="font-weight:bold;">Junior Doctor Lead</td>
-                        <td>Dr Maida (SHO)</td>
-                        <td>
-                            1. Conduct pre- and post-intervention procedural knowledge assessments.<br>
-                            2. Collect baseline and post-intervention "Stopwatch Audit" timings.
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h4 style="margin-bottom:5px; margin-top:15px; font-size:1em; color:var(--chart-danger);">Part B: Corporate & Support Services</h4>
-            <table class="measure-table">
-                <thead>
-                    <tr>
-                        <th width="20%">Department</th>
-                        <th width="25%">Point of Contact</th>
-                        <th width="55%">Specific "Ask" & Action Required</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="font-weight:bold;">Governance & Patient Safety</td>
-                        <td>Governance Lead / Patient Safety Specialist</td>
-                        <td>
-                            <strong>The Approach:</strong> "This project bridges a gap in our NatSSIPs compliance."<br>
-                            <strong>The Ask:</strong> <br>
-                            1. Formally log the QRH guides as the approved LocSSIP checklist for these procedures.<br>
-                            2. Agree that "Unable to locate kit" is a reportable safety incident (Datix) to track recurrence.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight:bold;">Domestics (Cleaning)</td>
-                        <td>Hotel Services Manager / Housekeeping Supervisor</td>
-                        <td>
-                            <strong>The Approach:</strong> "We need your help to keep this life-saving kit safe and in position."<br>
-                            <strong>The Ask:</strong> <br>
-                            1. Brief staff: The trolley has a "Red Line" zone on the floor. It must not be moved to clean behind it without clinical supervision.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight:bold;">Materials Management (Stores)</td>
-                        <td>Khan Zaman (Lead)<br>Deputies: Lisa, Sue</td>
-                        <td>
-                            <strong>The Approach:</strong> "We are switching from a 'Push' system (daily top-up) to a 'Pull' system (only when broken)."<br>
-                            <strong>The Ask:</strong> <br>
-                            1. Do <strong>NOT</strong> open the drawers daily. Only restock if the plastic tag is broken.<br>
-                            2. Agree on "Par Levels" (Minimum Stock) for the unusual items (e.g. Gigli Saws) so they don't go out of stock in the main warehouse.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight:bold;">Operations Manager</td>
-                        <td>Charlotte Vineham</td>
-                        <td>
-                            <strong>The Approach:</strong> "This is a low-cost safety intervention. We are re-using existing stock."<br>
-                            <strong>The Ask:</strong> <br>
-                            1. Provide a quote for the trolley frame (Capital vs Revenue).<br>
-                            2. Support the "Matron Pitch" if budget questions arise.
-                        </td>
-                    </tr>
                 </tbody>
             </table>
         </section>
 
         <section>
             <h2>8c. Engagement & Approvals Log</h2>
-            <p>The following log documents key stakeholder meetings and decisions taken during the project setup phase. This provides an evidence trail of multidisciplinary engagement and governance.</p>
+            <p>The following log documents key stakeholder meetings and decisions taken during the project setup phase.</p>
             
             <div class="engagement-log">
                 <div class="log-entry approved">
-                    <div class="log-date">27 Jan 2026</div>
+                    <div class="log-date">March 2026</div>
                     <div class="log-detail">
-                        <strong>Dr Maida (SHO) — Junior Doctor Lead Meeting</strong><br>
-                        Met with Dr Maida to discuss her role in the project. She was allocated the task of conducting a structured knowledge assessment of staff procedural skills, to be administered both before and after the deployment of the QRH guides. This pre/post assessment forms a key outcome measure demonstrating the educational impact of the cognitive aid intervention.
-                        <br><span class="log-outcome">✓ TASK ALLOCATED — Pre/Post Knowledge Assessment</span>
+                        <strong>Charlotte Vineham (Operations Manager), Project Finance</strong><br>
+                        Charlotte formally sent the quote for the new trolley frame. This removes a key operational barrier to implementation and allows us to proceed with physical build plans.
+                        <br><span class="log-outcome">✓ TROLLEY QUOTE RECEIVED</span>
                     </div>
                 </div>
-                
+
                 <div class="log-entry approved">
-                    <div class="log-date">12 Feb 2026</div>
+                    <div class="log-date">April 2026</div>
                     <div class="log-detail">
-                        <strong>Charlotte Vineham (Operations Manager) — Project Approval Meeting</strong><br>
-                        Met with Charlotte to present the project rationale and resource requirements. Charlotte approved the project concept and agreed to source a quote for the dedicated trolley frame. This removes a key operational barrier to implementation.
-                        <br><span class="log-outcome">✓ PROJECT APPROVED — Trolley Quote to Follow</span>
+                        <strong>Consultant & Middle Grade Body, Cognitive Aid Review</strong><br>
+                        The draft HALO booklet was distributed to the consultant and middle grade body for review. Gathering feedback ensures clinical accuracy and buy-in before deploying the guides as part of PDSA cycle 1.
+                        <br><span class="log-outcome">✓ BOOKLET DISTRIBUTED FOR FEEDBACK</span>
                     </div>
                 </div>
-                
+
                 <div class="log-entry approved">
-                    <div class="log-date">18 Feb 2026</div>
+                    <div class="log-date">26 Apr 2026</div>
                     <div class="log-detail">
-                        <strong>Mr Nadeem Zia (Trauma Lead Consultant) — Clinical Sign-Off Meeting</strong><br>
-                        Met with Mr Zia to seek clinical endorsement of the project. He approved the project and its approach. He recommended distributing the QRH guides to the wider consultant body for peer review and feedback prior to final lamination, ensuring clinical accuracy and buy-in from senior decision-makers.
-                        <br><span class="log-outcome">✓ CLINICALLY APPROVED — QRH to Consultant Body for Review</span>
-                    </div>
-                </div>
-                
-                <div class="log-entry approved">
-                    <div class="log-date">20 Feb 2026</div>
-                    <div class="log-detail">
-                        <strong>Jemma (Emergency Department Practitioner) — Kit Review & Nursing Dissemination Meeting</strong><br>
-                        Met with Jemma to conduct a hands-on review of the HALO trolley equipment and drawer configuration. She was allocated the role of disseminating the HALO trolley information to the nursing team and assisting with the arrangement of the ongoing checking and restocking process. This ensures nursing ownership and sustainability of the intervention.
-                        <br><span class="log-outcome">✓ TASKS ALLOCATED — Nursing Dissemination & Checking Process</span>
+                        <strong>Sarah Hart (Senior Sister), Nursing Operations</strong><br>
+                        Met with Sarah to finalise the operational plan for the trolley. We agreed the drawers will be tagged so they only require a quick visual check. The team that uses the kit will be responsible for replacing the drawer contents.
+                        <br><span class="log-outcome">✓ NURSING TAG SYSTEM & RESTOCK RULE AGREED</span>
                     </div>
                 </div>
             </div>
@@ -1062,15 +974,15 @@
                 </div>
                 <div class="driver-col">
                     <div class="driver-header">Primary Drivers</div>
-                    <div class="driver-box"><strong>Physical Access</strong><br>(Location)</div>
                     <div class="driver-box"><strong>Cognitive Support</strong><br>(Mental Model)</div>
+                    <div class="driver-box"><strong>Physical Access</strong><br>(Location)</div>
                     <div class="driver-box"><strong>Familiarity</strong><br>(System Awareness)</div>
                 </div>
                 <div class="driver-col">
                     <div class="driver-header">Interventions (PDSA)</div>
-                    <div class="driver-box"><strong>PDSA 1: Trolley</strong><br>Centralise kit.</div>
-                    <div class="driver-box"><strong>PDSA 2: QRH Guides</strong><br>Visual Aids.</div>
-                    <div class="driver-box"><strong>Sim/Training</strong><br>Flash Teaching.</div>
+                    <div class="driver-box"><strong>PDSA 1: Guides</strong><br>Visual Aids.</div>
+                    <div class="driver-box"><strong>PDSA 2: Trolley</strong><br>Centralise kit.</div>
+                    <div class="driver-box"><strong>PDSA 3: Kit Update</strong><br>Thoracotomy review.</div>
                 </div>
             </div>
         </section>
@@ -1108,26 +1020,33 @@
 
         <section>
             <h2>11. PDSA Cycles</h2>
-            <p><strong>PDSA Cycle 1: Physical Infrastructure (Trolley)</strong><br>
-            <em>Aim:</em> Reduce "Time to Kit" by 50%.<br>
-            <em>Plan:</em> Agree layout with Nursing (Jemma, EDP); create "Stopwatch Audit". Obtain trolley quote via Charlotte (Ops Manager). Secure clinical sign-off from Mr Zia (Trauma Lead).<br>
-            <em>Do:</em> Assemble/Label Trolley. Dr Maida (SHO) collects 10 "Post-Trolley" timings.<br>
-            <em>Study:</em> Analyse data. Check fidelity (missing items).<br>
-            <em>Act:</em> Adjust dividers; Proceed to Cycle 2.</p>
+            <p><strong>PDSA Cycle 1: Cognitive Infrastructure (HALO Booklet)</strong><br>
+            <em>Aim:</em> Increase procedural confidence and awareness of required kit.<br>
+            <em>Plan:</em> Draft QRH guides and distribute to the consultant and middle grade body for review.<br>
+            <em>Do:</em> Send booklets via email and physical copies in the staff room for feedback.<br>
+            <em>Study:</em> Collate feedback on clinical accuracy and layout.<br>
+            <em>Act:</em> Finalise the booklets before attaching them to the trolley in Cycle 2.</p>
 
-            <p><strong>PDSA Cycle 2: Cognitive Infrastructure (QRH Guides)</strong><br>
-            <em>Aim:</em> Increase Confidence >90%.<br>
-            <em>Plan:</em> Draft QRH guides; distribute to consultant body for peer review (per Mr Zia's recommendation); incorporate feedback; Laminate.<br>
-            <em>Do:</em> Attach to trolley; Run "Flash Teaching" at handovers. Jemma (EDP) disseminates to nursing team.<br>
-            <em>Study:</em> Repeat Staff Survey. Dr Maida analyses pre/post knowledge assessment data.<br>
-            <em>Act:</em> Finalise SOP; Handover to Nursing Team.</p>
+            <p><strong>PDSA Cycle 2: Physical Infrastructure (Trolley)</strong><br>
+            <em>Aim:</em> Reduce "Time to Kit" by 50%.<br>
+            <em>Plan:</em> Use the confirmed quote to build the trolley. Implement the agreed tagging system with Senior Sister Sarah Hart.<br>
+            <em>Do:</em> Introduce the physical trolley to the Resus bay. Dr Maida (SHO) collects post-intervention "Stopwatch Audit" timings.<br>
+            <em>Study:</em> Compare the new retrieval times against the baseline data.<br>
+            <em>Act:</em> Adjust drawer dividers if any specific kits are difficult to extract quickly.</p>
+
+            <p><strong>PDSA Cycle 3: Kit Update (Thoracotomy & Hysterotomy)</strong><br>
+            <em>Aim:</em> Ensure all supplied kit is fit for purpose.<br>
+            <em>Plan:</em> Review the current standard theatre trays which are unwieldy for emergency use.<br>
+            <em>Do:</em> Audit the tray contents against RCEM recommendations for ED interventions.<br>
+            <em>Study:</em> Identify redundant items causing clutter.<br>
+            <em>Act:</em> Create a proposal for bespoke, streamlined ED procedural trays.</p>
         </section>
 
         <div class="page-break"></div>
 
         <section>
             <h2>12. Strategic Action Plan & Gantt Chart</h2>
-            <p>This timeline outlines the 6-week execution phase. Tasks are assigned to specific team members to ensure accountability.</p>
+            <p>This timeline outlines the execution phase. Tasks are assigned to specific team members to ensure accountability.</p>
             
             <div class="gantt-container">
                 <table class="gantt-table">
@@ -1144,15 +1063,6 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="gantt-task-col">Stakeholder Buy-In</td>
-                            <td class="gantt-prep">✓</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
                             <td class="gantt-task-col">Baseline Data (Stopwatch)</td>
                             <td class="gantt-audit">SHO</td>
                             <td></td>
@@ -1162,9 +1072,9 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td class="gantt-task-col">Pre-Intervention Knowledge Assessment</td>
-                            <td class="gantt-audit">SHO</td>
-                            <td></td>
+                            <td class="gantt-task-col"><strong>PDSA 1:</strong> Booklet Review</td>
+                            <td class="gantt-prep">REVIEW</td>
+                            <td class="gantt-prep">REVIEW</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -1180,7 +1090,7 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td class="gantt-task-col"><strong>PDSA 1:</strong> Trolley Launch</td>
+                            <td class="gantt-task-col"><strong>PDSA 2:</strong> Trolley Launch</td>
                             <td></td>
                             <td></td>
                             <td class="gantt-live">LIVE</td>
@@ -1189,7 +1099,7 @@
                             <td class="gantt-live"></td>
                         </tr>
                         <tr>
-                            <td class="gantt-task-col">Fidelity Checks (Daily)</td>
+                            <td class="gantt-task-col">Tag System Fidelity Checks</td>
                             <td></td>
                             <td></td>
                             <td class="gantt-audit">RN</td>
@@ -1198,25 +1108,7 @@
                             <td class="gantt-audit">RN</td>
                         </tr>
                         <tr>
-                            <td class="gantt-task-col">QRH Consultant Peer Review</td>
-                            <td></td>
-                            <td></td>
-                            <td class="gantt-prep">PDF</td>
-                            <td class="gantt-prep">REVIEW</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td class="gantt-task-col"><strong>PDSA 2:</strong> QRH Guides & Education</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="gantt-live">TEACH</td>
-                            <td class="gantt-live"></td>
-                        </tr>
-                        <tr>
-                            <td class="gantt-task-col">Post-Intervention Knowledge Assessment</td>
+                            <td class="gantt-task-col">Post-Intervention Data</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -1236,64 +1128,7 @@
                     </tbody>
                 </table>
             </div>
-
-            <div class="weekly-plan">
-                <div class="week-header">WEEK 1: The Setup & Baseline</div>
-                <ul class="task-list">
-                    <li class="task-item"><span class="task-check">☐</span> Meeting: Brief Resus Lead Nurse (Band 7). Secure agreement on trolley location.</li>
-                    <li class="task-item"><span class="task-check">☐</span> Leadership: Brief Dr Maida (SHO). Hand over <strong>Appendix 2 (Data Tool)</strong>, <strong>Appendix 1 (WAD Survey)</strong>, and the pre-intervention knowledge assessment.</li>
-                    <li class="task-item"><span class="task-check">☐</span> Data: Dr Maida to collect 13x Baseline "Stopwatch Timings" (Pre-intervention) and administer the pre-intervention knowledge assessment.</li>
-                    <li class="task-item"><span class="task-check">☐</span> Logistics: Obtain trolley frame quote from Charlotte (Ops Manager).</li>
-                </ul>
-            </div>
-
-            <div class="weekly-plan">
-                <div class="week-header">WEEK 2: PDSA 1 Build & Governance</div>
-                <ul class="task-list">
-                    <li class="task-item"><span class="task-check">☐</span> <strong>Patient Safety Meeting:</strong> Brief Governance Lead. Ensure "Missing Equipment" Datix triggers are aligned.</li>
-                    <li class="task-item"><span class="task-check">☐</span> Assembly: Physically stock trolley using <strong>Procurement List</strong>.</li>
-                    <li class="task-item"><span class="task-check">☐</span> Labelling: Apply large, clear font labels to drawers.</li>
-                </ul>
-            </div>
-
-            <div class="weekly-plan">
-                <div class="week-header">WEEK 3: PDSA 1 Data & Review</div>
-                <ul class="task-list">
-                    <li class="task-item"><span class="task-check">☐</span> Fidelity Check: Daily check - have items been stolen/moved? (Jemma to coordinate nursing checks.)</li>
-                    <li class="task-item"><span class="task-check">☐</span> Data: Dr Maida to collect 10x "Post-Trolley" timings.</li>
-                    <li class="task-item"><span class="task-check">☐</span> Analysis: Compare Baseline vs Week 3 times. Plot on Run Chart.</li>
-                    <li class="task-item"><span class="task-check">☐</span> QRH: Distribute draft QRH guides to consultant body for peer review (per Mr Zia).</li>
-                </ul>
-            </div>
-
-            <div class="weekly-plan">
-                <div class="week-header">WEEK 4: PDSA 2 Prep (Cognitive)</div>
-                <ul class="task-list">
-                    <li class="task-item"><span class="task-check">☐</span> Content: Incorporate consultant feedback. Finalise HALO QRH Guides (2-Page System). Final Consultant Sign-off.</li>
-                    <li class="task-item"><span class="task-check">☐</span> Production: Print, Laminate, and attach to trolley using retractable lanyards.</li>
-                </ul>
-            </div>
-
-            <div class="weekly-plan">
-                <div class="week-header">WEEK 5: PDSA 2 Live (Education)</div>
-                <ul class="task-list">
-                    <li class="task-item"><span class="task-check">☐</span> Training: Launch "Flash Teaching" at 08:00/16:00 handovers using <strong>Appendix 3</strong>.</li>
-                    <li class="task-item"><span class="task-check">☐</span> Jemma (EDP): Disseminate HALO trolley information to wider nursing team.</li>
-                    <li class="task-item"><span class="task-check">☐</span> Survey: Re-distribute the "Confidence Survey" QR code.</li>
-                </ul>
-            </div>
-
-            <div class="weekly-plan">
-                <div class="week-header">WEEK 6: Sustain & Report</div>
-                <ul class="task-list">
-                    <li class="task-item"><span class="task-check">☐</span> Data: Dr Maida to administer post-intervention knowledge assessment.</li>
-                    <li class="task-item"><span class="task-check">☐</span> SOP: Write "Weekly Checking SOP" for Band 7s (with Jemma's input on nursing process).</li>
-                    <li class="task-item"><span class="task-check">☐</span> Reporting: Upload data to RCEM QIAT/Trust Audit system.</li>
-                </ul>
-            </div>
         </section>
-        
-        <div class="page-break"></div>
 
         <section>
             <h2>13. Implementation Playbook (The 'How-To')</h2>
@@ -1302,54 +1137,29 @@
                 <div class="playbook-title">1. The Matron Pitch (Budget & Safety)</div>
                 <p>When asking for approval, do not frame this as "new equipment". Frame it as "Risk Reduction".</p>
                 <div class="script-text">
-                    "While there is a small initial setup friction (sourcing the frame), this project generates <strong>long-term savings</strong>. Currently, we expire multiple sets of rarely used kit across three different cupboards. Centralizing them reduces our 'waste-on-expiry' costs significantly, while bridging a critical safety gap."
+                    "While there is a small initial setup cost for the frame, this project generates long-term savings. Centralising stock reduces our waste costs significantly while bridging a critical safety gap."
                 </div>
             </div>
 
-            <div class="playbook-box">
-                <div class="playbook-title">2. Fidelity Protocol (Stopping Theft)</div>
-                <p>The biggest risk to this QIP is staff "borrowing" scissors or rapid rhinos for non-emergencies.</p>
-                <ul>
-                    <li><strong>The Tag System:</strong> Use plastic "breakaway" tags (like on the defib) for the drawers.</li>
-                    <li><strong>The Rule:</strong> If the tag is broken, the checklist must be signed.</li>
-                    <li><strong>The Culture:</strong> "If you break the seal, you own the restock."</li>
-                </ul>
-            </div>
-            
             <div class="playbook-box" style="border-color: #d32f2f; background-color: #ffebee;">
-                <div class="playbook-title" style="color: #d32f2f;">3. Restocking Protocol (The "Pull" System)</div>
-                <p><strong>Primary Contacts:</strong> Khan Zaman / Lisa / Sue (Stores). <strong>Nursing Lead:</strong> Jemma (EDP).</p>
-                <p><strong>Trigger:</strong> Use of HALO Trolley is a "Never Event" in daily practice. Restock is not routine; it is ad-hoc.</p>
+                <div class="playbook-title" style="color: #d32f2f;">2. Restocking Protocol (The Tag System)</div>
+                <p><strong>Nursing Lead:</strong> Sarah Hart, Senior Sister.</p>
+                <p><strong>Trigger:</strong> Use of HALO Trolley is rare. Restock is not routine. It is ad-hoc.</p>
                 <ul>
-                    <li>1. <strong>Clinical Staff:</strong> Break tag, use kit, leave trolley "dirty."</li>
-                    <li>2. <strong>Integrity Check:</strong> Twice daily (08:00 & 20:00) at handover. Visual check of tags only.</li>
-                    <li>3. <strong>If Broken:</strong> Shift Coordinator logs Datix and alerts Stores Team for refill.</li>
+                    <li>1. <strong>Clinical Staff:</strong> Break the tag and use the kit. The team that uses the kit is responsible for replacing the drawer contents immediately after the case.</li>
+                    <li>2. <strong>Integrity Check:</strong> Twice daily at handover. Visual check of tags only. No need to count individual items if the tag is intact.</li>
+                    <li>3. <strong>If Broken:</strong> Shift Coordinator alerts Stores Team if items are missing.</li>
                 </ul>
             </div>
 
             <div class="playbook-box">
-                <div class="playbook-title">4. Junior Leadership Protocol</div>
+                <div class="playbook-title">3. Junior Leadership Protocol</div>
                 <p>How to manage the SHO Lead (Dr Maida):</p>
                 <ul>
                     <li><strong>Define the Output:</strong> "I need 10 timings by Friday."</li>
-                    <li><strong>Weekly 5-Min Feedback:</strong> Meet every Friday. Look at the data sheets together.</li>
-                    <li><strong>Portfolio:</strong> Explicitly tell them: "If you complete this data collection and knowledge assessment, I will sign you off for a QIP participation assessment."</li>
+                    <li><strong>Weekly Review:</strong> Meet every Friday to look at the data sheets together.</li>
+                    <li><strong>Portfolio:</strong> Explicitly offer a QIP participation assessment upon completion.</li>
                 </ul>
-            </div>
-
-            <div class="playbook-box" style="border: 2px solid #555;">
-                <div class="playbook-title">5. The "Soft Power" Strategy (Support Services)</div>
-                <p>How to handle the non-clinical stakeholders who can make or break the project:</p>
-                
-                <strong>The Domestics (Cleaners):</strong>
-                <div class="script-text" style="margin-bottom:10px;">
-                    "Hi [Name], this trolley contains equipment for emergency surgery. We have taped a red box on the floor for it. Please can you ensure it stays inside this box? If you need to clean behind it, please ask the Charge Nurse to move it for you."
-                </div>
-
-                <strong>The Patient Safety / Governance Team:</strong>
-                <div class="script-text">
-                    "I am helping you close a gap in our NatSSIPs compliance. Currently, we have no checklist for these procedures. By approving this trolley and the attached guides, we are creating a 'forcing function' that ensures the checklist is at the patient's bedside. Can we agree to log this project as a formal risk control measure?"
-                </div>
             </div>
         </section>
 
@@ -1362,28 +1172,7 @@
                     <li class="task-item"><span class="task-check">Q1</span> <strong>Compliance Check:</strong> Audit the Daily Checklist for completion.</li>
                     <li class="task-item"><span class="task-check">Q2</span> <strong>Staff Survey:</strong> Re-run the confidence survey for the new rotation of Junior Doctors.</li>
                     <li class="task-item"><span class="task-check">Q3</span> <strong>Spot Check:</strong> Random "Stopwatch Audit" (N=5) to ensure "Time to Kit" remains low.</li>
-                    <li class="task-item"><span class="task-check">Q4</span> <strong>Annual Review:</strong> Update the HALO QRH Guides to match any changes in national guidelines (DAS/RCEM).</li>
-                </ul>
-            </div>
-            
-            <div class="weekly-plan">
-                <div class="week-header">Green ED & Sustainability Integration</div>
-                <ul class="task-list">
-                    <li class="task-item">
-                        <span class="task-check">♻️</span> <strong>Waste Reduction:</strong> Centralising stock prevents expiration of duplicate items in multiple cupboards.
-                    </li>
-                    <li class="task-item">
-                        <span class="task-check">♻️</span> <strong>Pre-Packs:</strong> We will consult the Green ED team regarding the use of reusable metal instruments (CSSD) versus single-use plastic pre-packs for the Thoracotomy trays where feasible.
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="weekly-plan">
-                <div class="week-header">Induction Integration (Critical for Rotations)</div>
-                <p style="font-size:0.9em; margin-bottom:5px;">To prevent skill decay during Aug/Feb rotations, the following steps are mandatory:</p>
-                <ul class="task-list">
-                    <li class="task-item"><span class="task-check">☐</span> <strong>Induction Pack:</strong> "HALO Trolley Location" added to the Departmental Scavenger Hunt.</li>
-                    <li class="task-item"><span class="task-check">☐</span> <strong>Sim Day:</strong> The "Stopwatch Audit" is now a standard station in the monthly SHO Sim Day.</li>
+                    <li class="task-item"><span class="task-check">Q4</span> <strong>Annual Review:</strong> Update the HALO QRH Guides to match any changes in national guidelines.</li>
                 </ul>
             </div>
         </section>
@@ -1402,74 +1191,18 @@
                 <tbody>
                     <tr>
                         <td><strong>Single-site design</strong></td>
-                        <td>This QIP is conducted at a single Emergency Department (Birmingham Heartlands Hospital). Findings may not be directly generalisable to other departments with different layouts, staffing models, or case-mix.</td>
-                        <td>The underlying principle (centralised equipment reduces retrieval time) is generalisable even if specific timings are not. The project methodology is designed to be replicable.</td>
+                        <td>Findings may not be directly generalisable to other departments with different layouts or case-mix.</td>
+                        <td>The underlying principle is generalisable even if specific timings are not. The project methodology is designed to be replicable.</td>
                     </tr>
                     <tr>
                         <td><strong>Small sample size</strong></td>
-                        <td>Baseline data is N=13 and post-intervention data will be approximately N=10. While sufficient for run chart analysis per IHI guidance (≥10 data points), the sample is too small for parametric statistical testing of timing data.</td>
-                        <td>Run chart methodology is specifically designed for small-sample QI work and does not require large N. The pre/post knowledge assessment will use an appropriate non-parametric test (e.g., Wilcoxon signed-rank) if sample size is insufficient for parametric analysis.</td>
+                        <td>Baseline data is N=13. The sample is too small for parametric statistical testing of timing data.</td>
+                        <td>Run chart methodology is specifically designed for small-sample QI work and does not require large N.</td>
                     </tr>
                     <tr>
                         <td><strong>Hawthorne effect</strong></td>
-                        <td>Staff who know they are being timed may perform differently to their normal behaviour, potentially underestimating true baseline retrieval times.</td>
-                        <td>Mitigated by using a scenario-based approach ("Stopwatch Audit") where the timer starts at scenario declaration, not when the individual begins searching. This captures the cognitive processing time and more closely reflects real clinical use.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Simulated vs. real clinical use</strong></td>
-                        <td>Timing data is collected during in-situ simulation, not during actual patient care. Real emergencies involve additional stressors, competing tasks, and time pressure not fully replicated in simulation.</td>
-                        <td>The "Hot Debrief" trigger card (Appendix 6) is designed to capture real-world use data as a secondary source. In-situ simulation in the actual clinical environment provides higher ecological validity than laboratory simulation.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Confounding variables</strong></td>
-                        <td>Improvements in retrieval time may be partially attributable to staff becoming more familiar with the department layout over time (independent of the trolley intervention), particularly during a rotation period.</td>
-                        <td>By deliberately including staff at various stages of their rotation in both pre- and post-intervention samples, this effect is partially controlled. The magnitude of expected improvement (>50%) makes it unlikely that familiarity alone accounts for the change.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Sustainability uncertainty</strong></td>
-                        <td>Long-term compliance with the checking and restocking process is unproven at the time of writing. Equipment pilferage and tag compliance are theoretical risks.</td>
-                        <td>Quarterly audit schedule (Section 14), induction integration, and appointment of a permanent "HALO Guardian" (Jemma, EDP) are designed to mitigate this. Sustainability will be assessed at 6 and 12 months.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section>
-            <h2>14c. Dissemination Plan</h2>
-            <p>Findings from this QIP will be shared through the following channels to maximise impact and enable replication:</p>
-            <table class="measure-table">
-                <thead>
-                    <tr>
-                        <th width="30%">Channel</th>
-                        <th width="40%">Detail</th>
-                        <th width="30%">Timeline</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Trust Audit & Governance Meeting</strong></td>
-                        <td>Formal presentation of results to the departmental governance meeting, including run chart data and cost analysis.</td>
-                        <td>June/July 2026</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Regional EM Training Day</strong></td>
-                        <td>Presentation at the West Midlands Emergency Medicine Regional Teaching Programme or QI Showcase.</td>
-                        <td>Autumn 2026</td>
-                    </tr>
-                    <tr>
-                        <td><strong>RCEM Annual Scientific Conference</strong></td>
-                        <td>Abstract submission for poster or oral presentation at the RCEM ASC.</td>
-                        <td>Abstract deadline: typically Summer 2026 for Autumn conference</td>
-                    </tr>
-                    <tr>
-                        <td><strong>RCEM QIAT / ePortfolio</strong></td>
-                        <td>Upload of completed QIP documentation to the RCEM ePortfolio as evidence for SLO 11 (QIAT).</td>
-                        <td>Prior to ARCP</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Local Educational Platform</strong></td>
-                        <td>Publication of methodology and QRH templates on WMEBEM for other departments to adapt.</td>
-                        <td>Post-completion</td>
+                        <td>Staff who know they are being timed may perform differently to their normal behaviour.</td>
+                        <td>Mitigated by using a scenario-based approach where the timer starts at scenario declaration. This captures the cognitive processing time.</td>
                     </tr>
                 </tbody>
             </table>
@@ -1483,470 +1216,35 @@
                 <div class="week-header" style="background-color: #e8f0f7; color: var(--secondary-color);">PERSONAL REFLECTION: LEADERSHIP & CHANGE</div>
                 
                 <p><strong>1. What was the most difficult part of this project?</strong><br>
-                "Moving from 'Work as Imagined' to 'Work as Done'. I assumed staff knew where kit was. The baseline data (Run Chart) showed huge variation. Convincing senior nursing staff to allow a new trolley required negotiation skills and a focus on 'Patient Safety' rather than just 'New Kit'. Securing multi-stakeholder buy-in — from the Ops Manager (Charlotte) through to the Trauma Lead (Mr Zia) and the nursing team (via Jemma, EDP) — required tailored communication for each group's priorities."</p>
+                "Moving from 'Work as Imagined' to 'Work as Done'. I assumed staff knew where kit was. The baseline data showed huge variation. Convincing senior nursing staff to allow a new trolley required negotiation skills and a focus on Patient Safety. Securing multi-stakeholder buy-in required tailored communication for each group's priorities."</p>
 
                 <p><strong>2. What did I learn about the Model for Improvement?</strong><br>
-                "That PDSA cycles must be small. We initially wanted to restock the whole Resus room. We scaled this down to just 'One Trolley' (PDSA 1) to prove the concept before expanding. The data collection using a stopwatch provided objective evidence to support the change. Adding a pre/post knowledge assessment (led by Dr Maida) gave us a second robust outcome measure beyond the timing data alone."</p>
+                "That PDSA cycles must be small. We reordered our cycles to start with the cognitive aid booklet (PDSA 1) before introducing the physical trolley (PDSA 2). The data collection using a stopwatch provided objective evidence to support the change. Adding a knowledge assessment gave us a reliable outcome measure."</p>
 
                 <p><strong>3. What did I learn about leadership and delegation?</strong><br>
-                "Effective QI requires delegation with clear accountability. By assigning Dr Maida (SHO) the knowledge assessment and data collection, and Jemma (EDP) the nursing dissemination and checking process, I created a team with defined roles rather than attempting to do everything myself. This also provided portfolio evidence for the junior team members."</p>
+                "Effective QI requires delegation with clear accountability. By assigning Dr Maida (SHO) the data collection and Jemma (EDP) the nursing dissemination, I created a team with defined roles. This also provided portfolio evidence for the junior team members."</p>
 
                 <p><strong>4. Sustainability Plan:</strong><br>
-                "To ensure this doesn't fail when I rotate, I have embedded the 'Checklist Compliance' into the Band 7 daily workflow, appointed Jemma (EDP) as a permanent 'HALO Guardian' from the nursing faculty, and ensured the QRH guides have been peer-reviewed by the consultant body for long-term clinical credibility."</p>
+                "To ensure this does not fail when I rotate, we agreed a formal tagging process with Senior Sister Sarah Hart. The team that uses the kit replaces the drawer contents. The QRH guides have been peer-reviewed by the consultant body for long-term clinical credibility."</p>
             </div>
         </section>
 
         <div class="page-break"></div>
 
         <section>
-            <h2>Appendix 1: "Work as Done" Scoping Survey (Safety-II)</h2>
-            <div class="data-tool-sheet" style="background-color: #fcfcfc;">
-                <div class="data-header">
-                    <h3>BASELINE SCOPING: CURRENT AIDE MEMOIRE PRACTICES</h3>
-                    <p><em>To understand real-world workflows ("Work as Done") vs policy ("Work as Imagined"). Anonymous.</em></p>
-                </div>
-                
-                <div style="font-size: 0.95em; padding: 10px;">
-                    <p><strong>1. In the last 12 months, have you been involved in a HALO procedure (e.g. Canthotomy, Thoracotomy)?</strong><br>
-                    [ ] Yes<br>
-                    [ ] No</p>
-                    
-                    <p><strong>2. When you need to check a dose or equipment size urgently, what is your PRIMARY source? (Tick one)</strong><br>
-                    [ ] Trust Intranet / Official Policy<br>
-                    [ ] Asking a Colleague / Senior<br>
-                    [ ] Google / External App (e.g. WikiEM, Life in the Fast Lane)<br>
-                    [ ] Personal Cheat Sheet / Notebook<br>
-                    [ ] Memory</p>
-
-                    <p><strong>3. Do you carry any personal 'aide memoires' (e.g. saved photos on phone, pocket cards) for these procedures?</strong><br>
-                    [ ] Yes - on my phone<br>
-                    [ ] Yes - physical card<br>
-                    [ ] No</p>
-
-                    <p><strong>4. What is the biggest barrier to following the official Trust Policy for HALO procedures?</strong><br>
-                    [ ] Hard to find on Intranet<br>
-                    [ ] Too long / Text heavy<br>
-                    [ ] Not formatted for bedside use<br>
-                    [ ] Equipment location doesn't match policy</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Appendix 2: "Stopwatch Audit" Data Tool</h2>
-            <div class="data-tool-sheet">
-                <div class="data-header">
-                    <h3>HALO PROJECT: TIME-TO-KIT AUDIT</h3>
-                    <p><strong>Instructions for Data Collector (Dr Maida / SHO):</strong><br>
-                    1. Approach a clinician (Dr or Nurse) in the department.<br>
-                    2. <strong>START</strong> stopwatch immediately after giving the command: <em>"Scenario: [e.g. Traumatic Arrest] - We need to perform a [Procedure]."</em><br>
-                    3. <strong>STOP</strong> stopwatch when the <em>correct</em> item touches the Resus Trolley surface.<br>
-                    4. <strong>NOTE:</strong> Did they need a prompt? (e.g. "It's in the eye cupboard"). If yes, tick the "Prompt" column.</p>
-                </div>
-                
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th style="width:15%">Date</th>
-                            <th style="width:15%">Role</th>
-                            <th style="width:30%">Scenario / Item Requested</th>
-                            <th style="width:15%">Time (Secs)</th>
-                            <th style="width:10%">Prompt Required?</th>
-                            <th style="width:15%">Notes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>&nbsp;</td><td>&nbsp;</td><td>Lat Canthotomy Kit</td><td>&nbsp;</td><td>Y / N</td><td>&nbsp;</td></tr>
-                        <tr><td>&nbsp;</td><td>&nbsp;</td><td>Resus Hysterotomy Scalpel</td><td>&nbsp;</td><td>Y / N</td><td>&nbsp;</td></tr>
-                        <tr><td>&nbsp;</td><td>&nbsp;</td><td>Rapid Rhino (Posterior)</td><td>&nbsp;</td><td>Y / N</td><td>&nbsp;</td></tr>
-                        <tr><td>&nbsp;</td><td>&nbsp;</td><td>Thoracotomy Rib Spreader</td><td>&nbsp;</td><td>Y / N</td><td>&nbsp;</td></tr>
-                        <tr><td>&nbsp;</td><td>&nbsp;</td><td>Pericard. Spinal Needle</td><td>&nbsp;</td><td>Y / N</td><td>&nbsp;</td></tr>
-                        <tr><td>&nbsp;</td><td>&nbsp;</td><td>Central Line Kit (Subclavian)</td><td>&nbsp;</td><td>Y / N</td><td>&nbsp;</td></tr>
-                        <tr><td>&nbsp;</td><td>&nbsp;</td><td>Escharotomy Scalpel</td><td>&nbsp;</td><td>Y / N</td><td>&nbsp;</td></tr>
-                        <tr><td>&nbsp;</td><td>&nbsp;</td><td>Chest Drain (Open) Kit</td><td>&nbsp;</td><td>Y / N</td><td>&nbsp;</td></tr>
-                        <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Y / N</td><td>&nbsp;</td></tr>
-                    </tbody>
-                </table>
-                <p style="font-size:0.8em; text-align:center;"><em>Return completed sheets to Dr Turner (Project Lead)</em></p>
-            </div>
-        </section>
-
-        <section>
-            <h2>Appendix 3: Flash Teaching Script (5 Mins)</h2>
-            <p>To be delivered at Handovers (08:00 / 16:00) during Week 5.</p>
-            <div class="script-box">
-                <strong>LEAD:</strong> "Team, 3 minutes on the new HALO Trolley."<br><br>
-                <strong>1. THE WHY:</strong> "We found that 70% of us couldn't find kit for rare emergencies (e.g. cutting a neck or chest). This delay kills."<br><br>
-                <strong>2. THE WHAT:</strong> "We have built the HALO Trolley. It lives in Resus Bay 1. It contains EVERYTHING for: Canthotomy, Pericardiocentesis, MaxFax bleeds, Escharotomy, Crash Subclavian, Chest Drain, Hysterotomy, and Thoracotomy."<br><br>
-                <strong>3. THE HOW:</strong> "Look at the QRH guides attached to the handle. Page 1 is the 'Kit Dump' (what to open). Page 2 is the 'Action Card' (what to do)."<br><br>
-                <strong>4. THE ASK:</strong> "Please don't scavenge from it for minor cases. If you use it, tell the coordinator so we can restock. Go and open a drawer today to see the layout."<br><br>
-                <strong>END.</strong>
-            </div>
-        </section>
-
-        <section>
-            <h2>Appendix 4: Trolley & Drawer Configuration</h2>
-            <div class="trolley-diagram-container">
-                <div>
-                    <h4 style="text-align:center; margin-top:0;">Optimised HALO Trolley</h4>
-                    <div class="trolley-stack">
-                        <div class="drawer split">
-                            <div class="drawer-half bg-canthotomy">1a. Canthotomy</div>
-                            <div class="drawer-half bg-pericard">1b. Pericard.</div>
-                        </div>
-                        <div class="drawer split">
-                            <div class="drawer-half bg-maxfax">2a. MaxFax Pack</div>
-                            <div class="drawer-half bg-escharotomy">2b. Escharotomy</div>
-                        </div>
-                        <div class="drawer split">
-                            <div class="drawer-half bg-access">3a. Central Access</div>
-                            <div class="drawer-half" style="background:#eee; border-left:1px dashed #999;">3b. Spare</div>
-                        </div>
-                        <div class="drawer bg-chest">4. Chest Drain / Thoracostomy</div>
-                        <div class="drawer bg-hysterotomy">5. Resuscitative Hysterotomy</div>
-                        <div class="drawer bg-thoracotomy">6. Emergency Thoracotomy</div>
-                    </div>
-                </div>
-
-                <div class="drawer-detail-view">
-                    <div class="detail-title">Detail: Drawer 1 (Split Configuration)</div>
-                    <div class="layout-grid">
-                        <div class="layout-guide">
-                            <strong>DIVIDER</strong><br>
-                            Left: Eyes<br>
-                            Right: Pericardium
-                        </div>
-                        <div class="layout-kit">
-                            <div class="kit-item">Drape/Speculum<br>(Canthotomy)</div>
-                            <div class="kit-item">Spinal Needle<br>(Pericard)</div>
-                            <div class="kit-item">Iris Scissors</div>
-                            <div class="kit-item">3-Way Tap</div>
-                        </div>
-                    </div>
-                    <p style="font-size:0.8em; margin-top:10px; color:#666;">*Split drawers allow logical grouping of small-volume, high-acuity kits without wasting space.</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
             <h2>Appendix 5: Master Procurement & Stocking Order</h2>
             <div class="data-tool-sheet" style="border: 2px solid var(--primary-color);">
                 <div class="data-header">
                     <h3>HALO TROLLEY: MASTER STOCK LIST</h3>
-                    <p><strong>Procurement Lead:</strong> James Qadir / Charlotte Vineham &nbsp;|&nbsp; <strong>Stores Lead:</strong> Khan Zaman</p>
-                    <p><em>Note: Quantities listed below represent the stock required to build <strong>ONE</strong> complete trolley.</em></p>
-                </div>
-
-                <h4 style="background-color: #e3f2fd; padding: 5px; border-left: 5px solid var(--secondary-color);">PART A: CAPITAL / REUSABLE (High Value)</h4>
-                <table class="measure-table">
-                    <thead>
-                        <tr>
-                            <th style="width: 50%;">Item Description</th>
-                            <th style="width: 15%;">Qty</th>
-                            <th style="width: 35%;">Notes / Department Source</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Finochietto Rib Spreader</strong> (Medium/Adult)</td>
-                            <td>1</td>
-                            <td>Required for Drawer 6 (Thoracotomy). Source: Theatres/CSSD.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Gigli Saw Handles</strong> (Pair)</td>
-                            <td>1 Pair</td>
-                            <td>Drawer 6. Metal handles (reusable).</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Surgical Instrument Set (Metal)</strong><br>
-                                <em>Contains: Needle Holder, Toothed Forceps (Bonney's), Satinsky Clamp, Artery Forceps (Kelly's), Scissors (Mayo).</em>
-                            </td>
-                            <td>1 Set</td>
-                            <td>Ideally pre-packed by CSSD (Sterile Services).</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Tuff Cut Scissors</strong> (Heavy Duty)</td>
-                            <td>3</td>
-                            <td>Included in pre-packed trays: 1x Hysterotomy (Drawer 5), 1x Thoracotomy (Drawer 6), 1x Escharotomy (Drawer 2b).</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Internal Defibrillator Paddles</strong></td>
-                            <td>1 Set</td>
-                            <td><strong>CRITICAL:</strong> Must match Dept Defib Model (e.g., Zoll/Phillips).</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Spencer Wells Straight Artery Forceps</strong></td>
-                            <td>2</td>
-                            <td>Drawer 4 (Chest Drain — blunt dissection).</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Curved Kelly Forceps</strong></td>
-                            <td>1</td>
-                            <td>Drawer 4 (Chest Drain — alternative dissection).</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Episiotomy Scissors</strong></td>
-                            <td>1</td>
-                            <td>Drawer 5 (Hysterotomy). <em>May be included in pre-packed tray.</em></td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h4 style="background-color: #e8f5e9; padding: 5px; border-left: 5px solid var(--success-color); margin-top: 20px;">PART B: CONSUMABLES (The Shopping List)</h4>
-                <table class="measure-table">
-                    <thead>
-                        <tr>
-                            <th style="width: 50%;">Item Description</th>
-                            <th style="width: 15%;">Total Qty</th>
-                            <th style="width: 35%;">Drawer Distribution (Where it goes)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Scalpel: Size 10</strong> (Fine Blade)</td>
-                            <td>2</td>
-                            <td>1x Chest Drain (Drawer 4), 1x Spare. <em>Note: Hysterotomy/Thoracotomy blades are included in pre-packed trays (Drawers 5 & 6).</em></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Scalpel: Size 22</strong> (Large Blade)</td>
-                            <td>2</td>
-                            <td>1x Escharotomy (Drawer 2b), 1x Spare.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Gigli Saw Wire</strong> (Blade)</td>
-                            <td>2</td>
-                            <td>1x Thoracotomy (+1 Spare).</td>
-                        </tr>
-                        
-                        <tr>
-                            <td><strong>Chest Drain: 28-32F</strong> (Trauma/Blood)</td>
-                            <td>2</td>
-                            <td>Drawer 4 (Chest).</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Primed Underwater Seal Drains</strong></td>
-                            <td>2</td>
-                            <td>Drawer 4 (Chest) or trolley top shelf.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Foley Catheter: 12-14F</strong></td>
-                            <td>2</td>
-                            <td>Drawer 2a (MaxFax - Nasal Packing).</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Foley Catheter: 20F</strong></td>
-                            <td>1</td>
-                            <td>Drawer 6 (Thoracotomy - Wound Plug). <em>Included in pre-packed tray.</em></td>
-                        </tr>
-                        
-                        <tr>
-                            <td><strong>Rapid Rhino Packs</strong> (7.5cm & 9cm)</td>
-                            <td>2 of each</td>
-                            <td>Drawer 2a (MaxFax).</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Bite Block</strong> / McKesson Prop</td>
-                            <td>2</td>
-                            <td>Drawer 2a (MaxFax).</td>
-                        </tr>
-                        
-                        <tr>
-                            <td><strong>Suture: Silk 0</strong> (Heavy)</td>
-                            <td>1 Box</td>
-                            <td>Drawer 2a (Tongue Stitch).</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Suture: Silk 1-0</strong> (Medium)</td>
-                            <td>1 Box</td>
-                            <td>Drawer 4 (Drain Securement).</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Suture: Prolene 2-0</strong> (Horizontal Mattress)</td>
-                            <td>1 Box</td>
-                            <td>Drawer 6 (Cardiac Repair).</td>
-                        </tr>
-
-                        <tr>
-                            <td><strong>Central Line Kit</strong> (Triple Lumen)</td>
-                            <td>2</td>
-                            <td>Drawer 1b (Pericardium), Drawer 3a (Crash Subclavian).</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Pericardiocentesis Kit</strong></td>
-                            <td>2</td>
-                            <td>Drawer 1b (Pericardium). Backup/alternative to Central Line approach.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>3-Way Tap</strong></td>
-                            <td>2</td>
-                            <td>Drawer 1b (Pericardium), Drawer 3a (Central Access).</td>
-                        </tr>
-                        
-                        <tr>
-                            <td><strong>Chlorhexidine Splash Bottles</strong></td>
-                            <td>4</td>
-                            <td>Distributed across active drawers.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Sterile Gown & Drape Pack</strong></td>
-                            <td>4</td>
-                            <td>Drawers 1a/1b, 3a, 4, plus pre-packed trays (Drawers 5, 6).</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h4 style="background-color: #f3e5f5; padding: 5px; border-left: 5px solid #9c27b0; margin-top: 20px;">PART C: GENERAL CONSUMABLES (Shared Across Drawers)</h4>
-                <table class="measure-table">
-                    <thead>
-                        <tr>
-                            <th style="width: 50%;">Item Description</th>
-                            <th style="width: 15%;">Total Qty</th>
-                            <th style="width: 35%;">Notes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Sterile Surgical Gloves</strong> (Mixed Sizes)</td>
-                            <td>5 Pairs</td>
-                            <td>Distributed across active drawers.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Suturing Kits</strong> (Scissors, Needle Holder, Forceps)</td>
-                            <td>2</td>
-                            <td>Drawer 1a (Canthotomy — fine suture kit incl. appropriate forceps), Drawer 3a (Central Access).</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Wide Bore Yankauer Suction Catheters</strong> (with tubing)</td>
-                            <td>4 Sets</td>
-                            <td>Drawers 2a (MaxFax ×2), 5 (Hysterotomy), 6 (Thoracotomy).</td>
-                        </tr>
-                        <tr>
-                            <td><strong>14G Orange IV Cannulae</strong></td>
-                            <td>4</td>
-                            <td>General vascular access across procedures.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>16G Grey Cannulae</strong></td>
-                            <td>4</td>
-                            <td>Pericardiocentesis backup (Drawer 1b) and general access.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>IV Fluid Giving Sets</strong></td>
-                            <td>2</td>
-                            <td>General use.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Syringes: 2ml</strong></td>
-                            <td>5</td>
-                            <td>LA injection, drug delivery.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Syringes: 20ml</strong></td>
-                            <td>5</td>
-                            <td>Pericardiocentesis aspiration, saline flushes.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Syringes: 50ml</strong></td>
-                            <td>2</td>
-                            <td>Large volume aspiration.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Orange Hypodermic Needles</strong></td>
-                            <td>5</td>
-                            <td>LA injection.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Blunt Drawing-Up Needles</strong></td>
-                            <td>5</td>
-                            <td>Safe drug preparation.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Haemostatic Gauze Packs</strong></td>
-                            <td>2</td>
-                            <td>Drawer 2b (Escharotomy), general haemorrhage control.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Sterile Gauze Swabs</strong></td>
-                            <td>5 Packs</td>
-                            <td>Distributed across drawers.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Large Trauma Dressings</strong></td>
-                            <td>2</td>
-                            <td>Post-procedure wound coverage.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Tegaderm / Mepore Adhesive Dressings</strong></td>
-                            <td>5</td>
-                            <td>Drain/line securement (Drawers 3a, 4).</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Crepe Bandages</strong></td>
-                            <td>4 Rolls</td>
-                            <td>Escharotomy post-procedure (Drawer 2b), general use.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Sharpie Marker Pens</strong></td>
-                            <td>2</td>
-                            <td>Drawer 2b (Escharotomy — marking incision lines).</td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <div style="margin-top: 20px; padding: 10px; background: #fff3cd; border: 1px solid #ffeeba; font-size: 0.9em;">
-                    <strong>Note to Stores/Ordering:</strong> <br>
-                    Please set "Minimum Par Levels" for the above items. If a Drawer Tag is broken, the <strong>entire</strong> drawer contents must be checked against the QRH guide checklists.
+                    <p><strong>Procurement Lead:</strong> Charlotte Vineham &nbsp;|&nbsp; <strong>Stores Lead:</strong> Khan Zaman</p>
+                    <p><em>Note: Quantities listed below represent the stock required to build ONE complete trolley.</em></p>
                 </div>
                 
                 <div style="margin-top: 10px; padding: 10px; background: #e8f5e9; border: 1px solid #c8e6c9; font-size: 0.9em;">
                     <strong>Estimated Cost Summary:</strong><br>
-                    <strong>Capital:</strong> Trolley frame — Quote pending from Charlotte Vineham (Ops Manager).<br>
-                    <strong>Consumables:</strong> Majority of items are existing stock being relocated (cost-neutral). New consumable costs are minimal as most items are already ordered by Stores for other areas.<br>
-                    <em>A full cost breakdown will be appended once the trolley quote is received.</em>
+                    <strong>Capital:</strong> Trolley frame quote received from Charlotte Vineham (March 2026).<br>
+                    <strong>Consumables:</strong> Majority of items are existing stock being relocated. New consumable costs are minimal as most items are already ordered by Stores for other areas.<br>
                 </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Appendix 6: "Hot Debrief" Trigger Card</h2>
-            <div class="script-box" style="border: 2px solid #d32f2f; background: #fff0f0;">
-                <h4 style="margin:0 0 10px 0; color:#d32f2f;">POST-EVENT: HALO TROLLEY CHECK</h4>
-                <p><em>To be completed by Team Leader after ANY use of the Trolley for a live patient.</em></p>
-                <p><strong>1. Was the kit found immediately?</strong> [ Yes / No ]</p>
-                <p><strong>2. Was anything missing or expired?</strong> [ Yes / No ]</p>
-                <p><strong>3. Did you have to leave the bay to find extra items?</strong> [ Yes / No ]</p>
-                <p style="margin-top:10px; font-weight:bold;">If NO to Q1 or YES to Q2/3: Submit Datix and Email Project Lead.</p>
-            </div>
-        </section>
-
-        <section style="page-break-before: always;">
-            <h2>References</h2>
-            <div style="font-size: 0.9em; line-height: 1.6;">
-                <p>1. NHS England (2015). <em>National Safety Standards for Invasive Procedures (NatSSIPs).</em> London: NHS England. Available at: <a href="https://www.england.nhs.uk/patient-safety/natssips/">https://www.england.nhs.uk/patient-safety/natssips/</a></p>
-
-                <p>2. Centre for Perioperative Care (2023). <em>National Safety Standards for Invasive Procedures (NatSSIPs2).</em> London: CPOC. Available at: <a href="https://cpoc.org.uk/guidelines-and-resources/guidelines/national-safety-standards-invasive-procedures-natssips">https://cpoc.org.uk</a></p>
-                
-                <p>3. Royal College of Emergency Medicine (2024). <em>Guidelines for the Provision of Emergency Medical Services.</em> London: RCEM. Available at: <a href="https://rcem.ac.uk/wp-content/uploads/2025/01/GPEMS-Jan-2025.pdf">https://rcem.ac.uk</a></p>
-                
-                <p>4. National Confidential Enquiry into Patient Outcome and Death (2011). <em>Knowing the Risk: A Review of the Peri-operative Care of Surgical Patients.</em> London: NCEPOD. Available at: <a href="https://www.ncepod.org.uk/2011report2/downloads/POC_fullreport.pdf">https://www.ncepod.org.uk</a></p>
-                
-                <p>5. Arriaga AF, Bader AM, Wong JM, et al. (2013). Simulation-based trial of surgical-crisis checklists. <em>New England Journal of Medicine</em>, 368(3): 246–253.</p>
-
-                <p>6. Marshall SD (2013). Cognitive aids in healthcare. In: Borshoff D. <em>Cognitive Aids in Medicine.</em> LITFL. Available at: <a href="https://litfl.com/cognitive-aids-in-healthcare/">https://litfl.com/cognitive-aids-in-healthcare/</a></p>
-
-                <p>7. Low D, Clark N, Soar J, et al. (2011). A randomised control trial to determine if use of the iResus application on a smart phone improves the performance of an advanced life support provider in a simulated medical emergency. <em>Anaesthesia</em>, 66(4): 255–262.</p>
-
-                <p>8. Langley GJ, Moen RD, Nolan KM, Nolan TW, Norman CL, Provost LP (2009). <em>The Improvement Guide: A Practical Approach to Enhancing Organizational Performance.</em> 2nd ed. San Francisco: Jossey-Bass.</p>
-
-                <p>9. Provost LP, Murray S (2011). <em>The Health Care Data Guide: Learning from Data for Improvement.</em> San Francisco: Jossey-Bass. [IHI Run Chart Rules]</p>
-                
-                <p>10. Perla RJ, Provost LP, Murray SK (2011). The run chart: a simple analytical tool for learning from variation in healthcare processes. <em>BMJ Quality & Safety</em>, 20(1): 46–51.</p>
-
-                <p>11. Royal College of Emergency Medicine (2020). <em>RCEM Quality Improvement Guide.</em> London: RCEM. Available at: <a href="https://rcem.ac.uk/quality-improvement/">https://rcem.ac.uk/quality-improvement/</a></p>
-
-                <p>12. Royal College of Emergency Medicine (2021; 2025 update). <em>Emergency Medicine Curriculum: SLO 11 — Participate in and promote activity to improve the quality and safety of patient care.</em> London: RCEM. Available at: <a href="https://rcemcurriculum.co.uk/lead-quality-improvement/">https://rcemcurriculum.co.uk</a></p>
-
-                <p>13. Haynes AB, Weiser TG, Berry WR, et al. (2009). A surgical safety checklist to reduce morbidity and mortality in a global population. <em>New England Journal of Medicine</em>, 360(5): 491–499. [WHO Surgical Safety Checklist]</p>
             </div>
         </section>
 
