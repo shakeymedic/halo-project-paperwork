@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HALO Procedures QIP: Master Project File v10.0</title>
+    <title>HALO Procedures QIP: Master Project File v12.0</title>
     <style>
         :root {
             --primary-color: #003087;
@@ -622,6 +622,114 @@
             margin-top: 4px;
         }
 
+        .pdsa-cycle-box {
+            border: 1px solid var(--border-color);
+            background: #fcfcfc;
+            padding: 12px 15px;
+            margin: 12px 0;
+            border-radius: 4px;
+            page-break-inside: avoid;
+        }
+        .pdsa-cycle-box h4 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 11pt;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 4px;
+        }
+        .pdsa-cycle-box.completed {
+            border-left: 5px solid var(--success-color);
+        }
+        .pdsa-cycle-box.in-progress {
+            border-left: 5px solid #fbc02d;
+        }
+        .pdsa-cycle-box.planned {
+            border-left: 5px solid #b0c4de;
+        }
+        .cycle-tag {
+            display: inline-block;
+            font-size: 0.75em;
+            padding: 2px 8px;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+        .tag-done { background: var(--success-color); }
+        .tag-active { background: #fbc02d; color: #333; }
+        .tag-planned { background: #b0c4de; color: #333; }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 0.85em;
+        }
+        .results-table th, .results-table td {
+            border: 1px solid var(--border-color);
+            padding: 5px 8px;
+            text-align: left;
+        }
+        .results-table th {
+            background-color: var(--secondary-color);
+            color: white;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .results-table td.num {
+            text-align: center;
+        }
+        .results-table tr.flagged td {
+            background-color: #fff8e1;
+        }
+
+        .action-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 0.85em;
+        }
+        .action-table th, .action-table td {
+            border: 1px solid var(--border-color);
+            padding: 5px 8px;
+            vertical-align: top;
+        }
+        .action-table th {
+            background-color: #555;
+            color: white;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .status-pill {
+            display: inline-block;
+            font-size: 0.8em;
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .status-todo { background: #ffe0b2; color: #e65100; }
+        .status-carry { background: #e1bee7; color: #6a1b9a; }
+        .status-done { background: #c8e6c9; color: #1b5e20; }
+
+        .key-quote {
+            background: #fff;
+            border-left: 3px solid var(--secondary-color);
+            padding: 6px 10px;
+            margin: 6px 0;
+            font-style: italic;
+            font-size: 0.9em;
+            color: #444;
+        }
+        .key-quote .attribution {
+            display: block;
+            font-style: normal;
+            font-size: 0.85em;
+            color: #777;
+            margin-top: 3px;
+        }
+
         @media print {
             body { background-color: white; padding: 0; }
             .report-container { width: 100%; max-width: none; margin: 0; padding: 0; box-shadow: none; }
@@ -651,8 +759,12 @@
                     <td style="border: none; padding: 2px; text-align: right;"><strong>Planned Review:</strong> June 2026</td>
                 </tr>
                 <tr style="background: none;">
-                    <td style="border: none; padding: 2px;"><strong>Educational Supervisor:</strong> [ES Name]</td>
-                    <td style="border: none; padding: 2px; text-align: right;"><strong>Trust Audit Reg No:</strong> [Insert]</td>
+                    <td style="border: none; padding: 2px;"><strong>Educational Supervisor:</strong> Dr Ola Erinfolami (Consultant EM)</td>
+                    <td style="border: none; padding: 2px; text-align: right;"><strong>Curriculum:</strong> RCEM 2021 (2025 Update)</td>
+                </tr>
+                <tr style="background: none;">
+                    <td style="border: none; padding: 2px;"><strong>Submitted for:</strong> ST6 Final ARCP (CCT)</td>
+                    <td style="border: none; padding: 2px; text-align: right;"><strong>SLO:</strong> SLO11 — Quality &amp; Safety of Patient Care</td>
                 </tr>
             </table>
         </header>
@@ -664,12 +776,16 @@
                 <tr style="background:none;"><td style="border:none; padding:2px;">v8.0</td><td style="border:none; padding:2px;">Feb 2026</td><td style="border:none; padding:2px;">Stakeholder engagement log added. Evidence base, references, limitations, dissemination plan, and run chart methodology formalised.</td></tr>
                 <tr style="background:none;"><td style="border:none; padding:2px;">v9.0</td><td style="border:none; padding:2px;">Apr 2026</td><td style="border:none; padding:2px;">PDSA cycles reordered. Trolley quote confirmed. Nursing tag system agreed. HALO booklet distributed for feedback.</td></tr>
                 <tr style="background:none;"><td style="border:none; padding:2px;">v10.0</td><td style="border:none; padding:2px;">May 2026</td><td style="border:none; padding:2px;">Added final questionnaire reminder and QRH go-live timeline following consultant meeting.</td></tr>
+                <tr style="background:none;"><td style="border:none; padding:2px;">v11.0</td><td style="border:none; padding:2px;">May 2026</td><td style="border:none; padding:2px;">Senior feedback questionnaire closed (N=10). PDSA Cycle 1 Study and Act phases documented. Equipment list revisions agreed. Standalone QRH deployment to Resus planned ahead of trolley build.</td></tr>
+                <tr style="background:none;"><td style="border:none; padding:2px;">v12.0</td><td style="border:none; padding:2px;">May 2026</td><td style="border:none; padding:2px;">Baseline data reconciled against October 2025 survey (N=16). SMART aims revised to reflect actual baseline. Stakeholder names corrected. Project status clarified (Cycle 1 in Act; Cycles 2 &amp; 3 planned). ST6 development journey section added. Limitations expanded. ES details added.</td></tr>
             </table>
         </div>
 
         <section>
             <h2>1. Executive Summary</h2>
-            <p>Preliminary scoping (October 2025) identified a critical safety variance. While centralised equipment (e.g. the Central Line Trolley) was located in <strong>91 seconds</strong>, dispersed HALO equipment (e.g. Thoracotomy kit) took <strong>over 5 minutes</strong> to retrieve. This project replicates the successful 'Central Line' storage model for all HALO procedures to bridge this safety gap. Using the Model for Improvement, we implement a dual-arm strategy. First, cognitive support via a Quick Reference Handbook (QRH) guide system. Second, infrastructure improvements by centralising dispersed equipment into a dedicated HALO Trolley.</p>
+            <p>A baseline survey of ED clinical staff at Birmingham Heartlands ED (October–November 2025, N=16) confirmed a critical readiness gap for High Acuity Low Occurrence (HALO) procedures: <strong>no respondent (0/16) could correctly identify the equipment location for all 6 HALO procedures</strong>, and only 3 of 16 (18.8%) reported being able to at least "assist with guidance" for every procedure. 14 of 16 (87.5%) said a dedicated HALO trolley would be "very useful". An accompanying scoping audit confirmed that centralised equipment (the Central Line Trolley) was located in under 2 minutes, while dispersed HALO equipment (thoracotomy kit) took over 5 minutes — confirming that infrastructure, not seniority, dictated retrieval speed.</p>
+            <p>Using the Model for Improvement, this project deploys a dual-arm intervention strategy. <strong>PDSA Cycle 1</strong> (Cognitive Infrastructure) provides a peer-reviewed Quick Reference Handbook (QRH) for 8 HALO procedures using a standardised two-page format. <strong>PDSA Cycle 2</strong> (Physical Infrastructure) consolidates dispersed equipment into a dedicated HALO Trolley with a visual-check tagging system. <strong>PDSA Cycle 3</strong> (Kit Rationalisation) streamlines theatre packs to remove redundant items and embeds the QRH inside each pack.</p>
+            <p><strong>Current project status (May 2026):</strong> Cycle 1 has progressed through Plan, Do and Study (a structured peer-review questionnaire of consultants and senior trainees, N=10, closed 15 May 2026 with mean Likert ratings of 4.6–5.0 across all domains). Equipment-list revisions arising from peer review have been agreed; the QRH is being printed and laminated for standalone deployment in Resus during May–June 2026. Cycles 2 and 3 are sequenced to follow.</p>
         </section>
 
         <section>
@@ -680,33 +796,46 @@
                 <li><strong>IPC:</strong> Trolley design and location vetted by the Infection Prevention Control Lead to ensure cleaning compliance.</li>
                 <li><strong>Oversight:</strong> Discrepancies in stock will be reported via Datix to the Patient Safety Team.</li>
             </ul>
-            <p><strong>Ethics & Registration:</strong> This project is classified as a Quality Improvement initiative in accordance with the NHS Health Research Authority (HRA) decision tool and does not constitute research. No patient-identifiable data is collected at any stage. All timing data is anonymised at source and linked only to staff role. Staff participation in the "Stopwatch Audit" and knowledge assessments is voluntary. No formal ethical approval from a Research Ethics Committee (REC) is required. The project has been registered with the Trust Clinical Audit & Effectiveness Department in accordance with local governance requirements.</p>
+            <p><strong>Ethics & Registration:</strong> This project is classified as a Quality Improvement initiative in accordance with the NHS Health Research Authority (HRA) decision tool and does not constitute research or formal audit. No patient-identifiable data is collected at any stage. All timing data is anonymised at source and linked only to staff role. Staff participation in the "Stopwatch Audit" and knowledge assessments is voluntary. No formal ethical approval from a Research Ethics Committee (REC) is required. The project has been shared with the departmental governance lead and is being presented at the departmental governance meeting as part of the dissemination plan.</p>
         </section>
 
         <section>
             <h2>3. Patient & Public Involvement (PPI)</h2>
-            <p>Addresses the patient safety priority: "Right Kit, Right Place, Right Time". Delays in HALO scenarios are directly linked to mortality.</p>
+            <p>This project addresses the patient safety priority "Right Kit, Right Place, Right Time". Delays in HALO scenarios are directly linked to mortality.</p>
             <ul>
-                <li><strong>Patient Safety Partner (PSP):</strong> The project governance and risk assessment have been reviewed by the Trust Patient Safety Group.</li>
-                <li><strong>Second Victim:</strong> This project mitigates the psychological impact on staff by reducing cognitive load during high-stress crises.</li>
+                <li><strong>Patient Safety Group:</strong> The project will be presented at the departmental governance meeting as part of its dissemination plan. Where appropriate, the Trust Patient Safety Group will be engaged. This is an honest acknowledgement that formal Patient Safety Partner review has not yet occurred — it is part of the planned governance pathway.</li>
+                <li><strong>Second Victim:</strong> This project mitigates the psychological impact on staff by reducing cognitive load during high-stress crises. A clinician supported by structured cognitive aids and immediately available kit can preserve their judgement bandwidth for clinical decision-making.</li>
+                <li><strong>Outcome alignment:</strong> "Time to Kit" is a direct surrogate for "Time to Intervention" in the most time-critical procedures in Emergency Medicine.</li>
             </ul>
+            <p>Honest limitation: this is a system-level intervention, not a co-designed patient-facing service change. A future iteration could include a brief patient information sheet for survivors of HALO procedures who recover capacity — this is on the project sustainability backlog.</p>
         </section>
 
         <section>
             <h2>4. Problem & Background</h2>
-            <p>HALO procedures require immediate action. Current equipment storage is fragmented across multiple stores. This increases cognitive friction. A pilot audit (N=3) demonstrated that finding "scattered" stock takes <strong>>300 seconds</strong> (5 mins), whereas "trolley-based" stock takes just <strong>91 seconds</strong>. The infrastructure directly dictates retrieval speed, regardless of clinician seniority.</p>
+            <p>HALO procedures share three features that combine into a clear patient safety problem: each is life-saving, each is performed rarely (so skill and system memory both decay), and each requires immediate access to specialised equipment that is not in the standard arrest trolley. Current equipment storage is fragmented across the Ophthalmology store (lateral canthotomy), Obstetrics box (hysterotomy), Resus store cupboards (thoracotomy, chest drain) and the standard arrest trolley (limited maxillofacial kit).</p>
+            <p>A structured baseline survey (October–November 2025, N=16; 7 HST4+ trainees, 4 SHOs, 4 ACPs, 1 Other) found:</p>
+            <ul>
+                <li><strong>0/16 (0%) of staff</strong> could correctly identify the equipment location for all 6 HALO procedures. Pooled across procedure-responses, only 24% knew the correct location.</li>
+                <li><strong>0/16 (0%) of staff</strong> reported being confident to perform all 6 procedures independently. Only <strong>3/16 (18.8%)</strong> could at least "assist with guidance" for every procedure.</li>
+                <li><strong>14/16 (87.5%) of staff</strong> said a dedicated HALO trolley with printed aide-memoires would be "very useful"; <strong>12/16 (75%)</strong> said an ALS-style flowchart would be "absolutely" useful.</li>
+            </ul>
+            <p>An accompanying scoping audit demonstrated that finding "scattered" stock takes <strong>over 5 minutes</strong>, while "trolley-based" stock takes under 2 minutes. The infrastructure directly dictates retrieval speed, regardless of clinician seniority.</p>
             
             <h3>4b. Evidence Base</h3>
-            <p>The concept of cognitive offloading through standardised equipment organisation is well-established in high-reliability industries. In healthcare, the "Resuscitation Trolley" model reduces time-to-intervention in cardiac arrest scenarios. The Royal College of Emergency Medicine (RCEM) Quality Standards for Major Trauma (2024) emphasise the importance of immediately accessible procedural equipment. The National Confidential Enquiry into Patient Outcome and Death (NCEPOD) repeatedly highlights equipment availability as a contributory factor in suboptimal care during emergency procedures. The QRH system draws on principles from aviation checklist design and the NHS Emergency Department Checklist programme.</p>
+            <p>The concept of cognitive offloading through standardised equipment organisation is well-established in high-reliability industries. In healthcare, the "Resuscitation Trolley" model reduces time-to-intervention in cardiac arrest scenarios. The Royal College of Emergency Medicine (RCEM) Quality Standards for Major Trauma (2024) emphasise the importance of immediately accessible procedural equipment. The National Confidential Enquiry into Patient Outcome and Death (NCEPOD) repeatedly highlights equipment availability as a contributory factor in suboptimal care during emergency procedures. The QRH system draws on principles from aviation checklist design and the NHS Emergency Department Checklist programme. The intervention design draws explicitly on the <strong>Hierarchy of Intervention Effectiveness</strong>: cognitive aids (the QRH) are mid-tier (memory aid), while the HALO trolley is high-tier (forcing function and standardisation). Deploying both gives a defence-in-depth approach.</p>
         </section>
 
         <section>
             <h2>5. SMART Aims</h2>
             <p>By <strong>June 2026</strong>:</p>
             <ul>
-                <li><strong>Outcome (Confidence):</strong> Increase staff reporting "confident to assist/perform with guidance" from 9% to <strong>≥90%</strong>.</li>
-                <li><strong>Process (Efficiency):</strong> Reduce mean "Time to Kit" for 8 core HALO procedures by <strong>50%</strong>.</li>
+                <li><strong>Outcome 1 — Knowledge:</strong> Increase the proportion of ED clinical staff who can correctly identify the equipment location for all 6 HALO procedures from <strong>0%</strong> (baseline October 2025, N=16) to <strong>≥75%</strong>.</li>
+                <li><strong>Outcome 2 — Confidence:</strong> Increase the proportion of ED clinical staff who report at least "assist / perform with guidance" for all 6 HALO procedures from <strong>18.8%</strong> (baseline) to <strong>≥75%</strong>.</li>
+                <li><strong>Process — Efficiency:</strong> Reduce mean "Time to Kit" for 6 core HALO procedures by <strong>50%</strong> from the consolidated baseline.</li>
+                <li><strong>Process — Compliance:</strong> Maintain <strong>≥95%</strong> weekly trolley integrity-check compliance once the trolley is live.</li>
+                <li><strong>Balancing:</strong> Zero incidents of stock depletion in donor areas (Ophthalmology, Obstetrics, Resus) attributable to the HALO Trolley restock policy.</li>
             </ul>
+            <p style="font-size:0.9em;"><em>Note on target choice: 75% (rather than 90%) was set after reviewing the baseline distribution. Even staff identifying as "Senior middle grade HST4+" had heterogeneous knowledge and confidence. A 75% target is realistic and clinically meaningful, while accepting that some procedures (e.g. resuscitative hysterotomy) will always have a long tail of clinicians who never expect to perform them independently.</em></p>
         </section>
 
         <section>
@@ -761,7 +890,7 @@
                 <em>Conclusion: Centralising equipment reduces retrieval time by >60%.</em>
             </div>
 
-            <p>In accordance with RCEM best practice, data is displayed as a Run Chart to identify special cause variation. Baseline data combines Pilot and Phase 1 timings for statistical stability (Total N=13). A minimum of 10 data points is recommended by the Institute for Healthcare Improvement (IHI) for reliable run chart interpretation.</p>
+            <p>In accordance with RCEM best practice, "Time to Kit" data is being collected for run chart analysis. The Institute for Healthcare Improvement (IHI) recommends a minimum of 10–12 data points for reliable run chart interpretation. The illustrative chart below shows the methodological approach; the live dataset is being consolidated ahead of PDSA Cycle 2 launch (see Section 14b Limitations for the honest status of baseline timing data).</p>
             
             <p><strong>Run Chart Interpretation Rules (IHI):</strong> Non-random variation is identified by several rules. Rule 1 is a Shift: 6 or more consecutive points all above or below the median. Rule 2 is a Trend: 5 or more consecutive points all increasing or decreasing. Rule 3 involves assessing against the expected runs table. Rule 4 relates to an Astronomical data point. If any rule is met, there is less than a 5% probability this pattern occurred by chance alone. Post-intervention, we will look specifically for a shift below the baseline median to confirm the trolley intervention has produced a sustained improvement in retrieval times.</p>
             
@@ -782,7 +911,7 @@
                     <div style="position: absolute; right: 5px; bottom: 33%; color: var(--success-color); font-size: 0.7em; font-weight: bold;">Target: 60s</div>
                 </div>
                 <p style="font-size: 0.85em; text-align: center; color: #555;">
-                    <em>Figure 1: Illustrative run chart showing baseline variation. Full N=13 dataset shows high variation and prolonged retrieval times (Median = 245s).</em>
+                    <em>Figure 1: Illustrative run chart showing the intended display format. The live baseline dataset is being consolidated (approximately 5–6 retrievals timed to date). Run chart interpretation will be deferred until ≥12 baseline data points are accumulated, per IHI guidance. Median figure shown (245s) is illustrative pending consolidated dataset.</em>
                 </p>
             </div>
         </section>
@@ -814,13 +943,13 @@
                         <td>[To confirm]</td>
                     </tr>
                     <tr>
-                        <td><strong>Mr Nadeem Zia</strong></td>
+                        <td><strong>Mr Muhammad Zia</strong></td>
                         <td>Consultant, Trauma Lead</td>
                         <td>Clinical sign-off of trolley contents and QRH guides. Recommended consultant peer review.</td>
                         <td>Approved, 18 Feb 2026</td>
                     </tr>
                     <tr>
-                        <td><strong>Dr Safdar Iman</strong></td>
+                        <td><strong>Dr Safdar Imam</strong></td>
                         <td>Consultant, Resus Lead</td>
                         <td>Clinical endorsement and authorisation to re-allocate stock to the new trolley.</td>
                         <td>Approved, April 2026</td>
@@ -908,7 +1037,7 @@
                     </tr>
                     <tr>
                         <td style="font-weight:bold;">Resus Leadership</td>
-                        <td>Nadeem Zia, Safdar Iman</td>
+                        <td>Muhammad Zia, Safdar Imam</td>
                         <td>
                             1. Clinical sign-off on the QRH guide content.<br>
                             2. Authorisation to move stock from Resus cupboards to the HALO trolley.<br>
@@ -962,9 +1091,18 @@
                 <div class="log-entry approved">
                     <div class="log-date">8 May 2026</div>
                     <div class="log-detail">
-                        <strong>Dr Safdar Iman and Mr Nadeem Zia, Consultant Leads</strong><br>
-                        Met with Safdar and discussed with Nadeem. We agreed to send one final reminder email for the feedback questionnaire (https://forms.gle/rCsdBfkNUSsJG6738). The questionnaire closes on 15 May 2026. The QRH guides go live the following week.
+                        <strong>Dr Safdar Imam and Mr Muhammad Zia, Consultant Leads</strong><br>
+                        Met with Safdar and discussed with Muhammad. We agreed to send one final reminder email for the feedback questionnaire (https://forms.gle/rCsdBfkNUSsJG6738). The questionnaire closes on 15 May 2026. The QRH guides go live the following week.
                         <br><span class="log-outcome">✓ QUESTIONNAIRE DEADLINE & GO-LIVE AGREED</span>
+                    </div>
+                </div>
+
+                <div class="log-entry approved">
+                    <div class="log-date">15 May 2026</div>
+                    <div class="log-detail">
+                        <strong>Senior Feedback Questionnaire Closed</strong><br>
+                        The feedback questionnaire closed with N=10 responses (3 Consultants, 6 ST4–7+ trainees, 1 Other) collected between 20 April and 15 May 2026. Quantitative and qualitative findings are analysed in Section 11.1.
+                        <br><span class="log-outcome">✓ FEEDBACK DATA COLLECTED (N=10)</span>
                     </div>
                 </div>
             </div>
@@ -1030,26 +1168,174 @@
 
         <section>
             <h2>11. PDSA Cycles</h2>
-            <p><strong>PDSA Cycle 1: Cognitive Infrastructure (HALO Booklet)</strong><br>
-            <em>Aim:</em> Increase procedural confidence and awareness of required kit.<br>
-            <em>Plan:</em> Draft QRH guides and distribute to the consultant and middle grade body for review.<br>
-            <em>Do:</em> Send booklets via email and physical copies in the staff room for feedback.<br>
-            <em>Study:</em> Collate feedback on clinical accuracy and layout.<br>
-            <em>Act:</em> Finalise the booklets before attaching them to the trolley in Cycle 2.</p>
 
-            <p><strong>PDSA Cycle 2: Physical Infrastructure (Trolley)</strong><br>
-            <em>Aim:</em> Reduce "Time to Kit" by 50%.<br>
-            <em>Plan:</em> Use the confirmed quote to build the trolley. Implement the agreed tagging system with Senior Sister Sarah Hart.<br>
-            <em>Do:</em> Introduce the physical trolley to the Resus bay. Dr Maida (SHO) collects post-intervention "Stopwatch Audit" timings.<br>
-            <em>Study:</em> Compare the new retrieval times against the baseline data.<br>
-            <em>Act:</em> Adjust drawer dividers if any specific kits are difficult to extract quickly.</p>
+            <div class="pdsa-cycle-box in-progress">
+                <h4>PDSA Cycle 1: Cognitive Infrastructure (HALO QRH Booklet) <span class="cycle-tag tag-active">STUDY/ACT IN PROGRESS</span></h4>
+                <p><strong>Aim:</strong> Increase procedural confidence and awareness of required kit through a peer-reviewed, deployable Quick Reference Handbook.</p>
+                <p><strong>Plan:</strong> Draft QRH guides for 8 core HALO procedures using a two-page format (walkthrough + flowchart). Distribute to the consultant and middle grade body via a structured online questionnaire.</p>
+                <p><strong>Do:</strong> Booklet distributed April 2026. Reminder email circulated 8 May 2026. Questionnaire closed 15 May 2026 (N=10 responses; 3 Consultants, 6 ST4–7+, 1 Other).</p>
+                <p><strong>Study:</strong> Quantitative and qualitative analysis of feedback (see Section 11.1).</p>
+                <p><strong>Act:</strong> Revisions made to equipment lists; standalone QRH to be printed and deployed in Resus ahead of trolley build (see Section 11.2).</p>
+            </div>
+            
+            <h3>11.1 PDSA Cycle 1 — Study Phase: Senior Feedback Analysis</h3>
+            <p>A structured online questionnaire was distributed to the consultant and senior trainee body following draft circulation in April 2026. Ten responses were received between 20 April and 15 May 2026. Respondent grades comprised 3 Consultants, 6 ST4–7+ trainees, and 1 "Other".</p>
 
-            <p><strong>PDSA Cycle 3: Kit Update (Thoracotomy & Hysterotomy)</strong><br>
-            <em>Aim:</em> Ensure all supplied kit is fit for purpose.<br>
-            <em>Plan:</em> Review the current standard theatre trays which are unwieldy for emergency use.<br>
-            <em>Do:</em> Audit the tray contents against RCEM recommendations for ED interventions.<br>
-            <em>Study:</em> Identify redundant items causing clutter.<br>
-            <em>Act:</em> Create a proposal for bespoke, streamlined ED procedural trays.</p>
+            <h4 style="margin-bottom:5px; font-size:1em; color:var(--primary-color);">Quantitative Findings (5-point Likert: 1 = strongly disagree, 5 = strongly agree)</h4>
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th width="50%">Domain</th>
+                        <th width="20%" style="text-align:center;">Mean (N=10)</th>
+                        <th width="15%" style="text-align:center;">Range</th>
+                        <th width="15%" style="text-align:center;">Median</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Layout & Usability</strong></td><td colspan="3" style="background:#f5f5f5;"></td></tr>
+                    <tr><td>Visual layout clear and easy to navigate</td><td class="num">4.9</td><td class="num">4–5</td><td class="num">5</td></tr>
+                    <tr><td>Two-page system (walkthrough + flowchart) intuitive</td><td class="num">5.0</td><td class="num">5–5</td><td class="num">5</td></tr>
+                    <tr><td>Colour-coding effective (grey/red)</td><td class="num">4.8</td><td class="num">4–5</td><td class="num">5</td></tr>
+                    <tr class="flagged"><td>Text size readable under pressure</td><td class="num">4.8</td><td class="num">3–5</td><td class="num">5</td></tr>
+                    <tr><td><strong>Equipment Information</strong></td><td colspan="3" style="background:#f5f5f5;"></td></tr>
+                    <tr class="flagged"><td>Equipment lists accurate and complete</td><td class="num">4.7</td><td class="num">4–5</td><td class="num">5</td></tr>
+                    <tr class="flagged"><td>Storage locations clearly indicated</td><td class="num">4.6</td><td class="num">3–5</td><td class="num">5</td></tr>
+                    <tr><td><strong>Procedural Content</strong></td><td colspan="3" style="background:#f5f5f5;"></td></tr>
+                    <tr class="flagged"><td>Steps clinically accurate and up to date</td><td class="num">4.7</td><td class="num">3–5</td><td class="num">5</td></tr>
+                    <tr><td>Steps in logical sequential order</td><td class="num">4.9</td><td class="num">4–5</td><td class="num">5</td></tr>
+                    <tr><td>Pre-procedure safety checks clearly described</td><td class="num">4.9</td><td class="num">4–5</td><td class="num">5</td></tr>
+                    <tr><td><strong>Overall</strong></td><td colspan="3" style="background:#f5f5f5;"></td></tr>
+                    <tr><td>Overall rating as a clinical reference tool</td><td class="num"><strong>5.0</strong></td><td class="num">5–5</td><td class="num"><strong>5</strong></td></tr>
+                </tbody>
+            </table>
+            <p style="font-size:0.85em; margin-top:4px;"><em>Rows highlighted in cream had at least one rating below 5/5 and were examined for actionable themes in the free-text responses.</em></p>
+
+            <p><strong>Recommendation:</strong> 10/10 respondents (100%) answered "Yes, definitely" when asked if they would recommend the QRH to colleagues as a useful resource for high acuity procedures.</p>
+
+            <h4 style="margin-bottom:5px; font-size:1em; color:var(--primary-color);">Procedure-Specific Equipment Concerns (Tick-Box, Multiple Selection)</h4>
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th width="60%">Procedure</th>
+                        <th width="20%" style="text-align:center;">Respondents flagging concern</th>
+                        <th width="20%" style="text-align:center;">% of N=10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="flagged"><td>Resuscitative Hysterotomy</td><td class="num">2</td><td class="num">20%</td></tr>
+                    <tr class="flagged"><td>Resuscitative Thoracotomy</td><td class="num">2</td><td class="num">20%</td></tr>
+                    <tr class="flagged"><td>Surgical Airway (eFONA)</td><td class="num">1</td><td class="num">10%</td></tr>
+                </tbody>
+            </table>
+            <p style="font-size:0.85em;"><em>Note: Only one respondent (Dr Safdar Imam, Consultant Resus Lead) provided narrative detail explaining the concerns. The eFONA flag was made without accompanying text.</em></p>
+
+            <h4 style="margin-bottom:5px; font-size:1em; color:var(--primary-color);">Qualitative Themes</h4>
+            
+            <p><strong>Theme 1: Equipment list omissions (consultant clinical review)</strong></p>
+            <div class="key-quote">
+                "Resuscitative hysterotomy — Umbilical cord clamps and may be adding a couple of artery forceps? Resuscitative thoracotomy — Use of Pledgets mentioned in procedure but not present in equipment list. Consider adding a walkthrough and flowchart page for the procedure in each pack."
+                <span class="attribution">— Dr Safdar Imam, Consultant Resus Lead</span>
+            </div>
+
+            <p><strong>Theme 2: Positive endorsement of format</strong></p>
+            <div class="key-quote">
+                "The standardised format is really helpful for stressful situations when you want info quickly. The layout of each page is clear and easy to follow."
+                <span class="attribution">— ST4–7+ respondent</span>
+            </div>
+            <div class="key-quote">
+                "A well structured and clearly organised guide that will be invaluable during time-critical HALO procedures."
+                <span class="attribution">— Dr Safdar Imam, Consultant Resus Lead</span>
+            </div>
+
+            <p><strong>Theme 3: Text size — single concern with self-noted caveat</strong></p>
+            <div class="key-quote">
+                "Though I have not visualised in A4 size, some of the instructions do seem to be a little small text size, this may be from not seeing it A4 though."
+                <span class="attribution">— ST4–7+ respondent (rated text size 3/5)</span>
+            </div>
+            <p>The respondent acknowledged the concern may be a screen-viewing artefact. Verification on the A4 print copy is required before go-live.</p>
+
+            <p><strong>Procedural step concerns:</strong> No respondent identified any specific procedural step concerns in the free-text field. All ten respondents selected "None — all procedures have accurate steps" for the question on procedural step accuracy.</p>
+
+            <h3>11.2 PDSA Cycle 1 — Act Phase: Agreed Revisions & Deployment Plan</h3>
+            <p>The following actions have been agreed based on the Study findings. The revised QRH will then be printed and deployed in Resus as a standalone cognitive aid ahead of the trolley build (Cycle 2).</p>
+            
+            <table class="action-table">
+                <thead>
+                    <tr>
+                        <th width="40%">Action</th>
+                        <th width="22%">Source</th>
+                        <th width="20%">Owner</th>
+                        <th width="18%">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Add umbilical cord clamps to Resuscitative Hysterotomy equipment list</td>
+                        <td>Dr Safdar Imam</td>
+                        <td>Project Lead</td>
+                        <td><span class="status-pill status-todo">To action</span></td>
+                    </tr>
+                    <tr>
+                        <td>Add 2× artery forceps to Resuscitative Hysterotomy equipment list (pending confirmation of consensus)</td>
+                        <td>Dr Safdar Imam</td>
+                        <td>Project Lead</td>
+                        <td><span class="status-pill status-todo">To action</span></td>
+                    </tr>
+                    <tr>
+                        <td>Add pledgets to Resuscitative Thoracotomy equipment list (currently referenced in procedure but absent from list)</td>
+                        <td>Dr Safdar Imam</td>
+                        <td>Project Lead</td>
+                        <td><span class="status-pill status-todo">To action</span></td>
+                    </tr>
+                    <tr>
+                        <td>Verify text legibility on A4 print copy under Resus lighting before go-live</td>
+                        <td>ST4–7+ respondent</td>
+                        <td>Project Lead</td>
+                        <td><span class="status-pill status-todo">To action</span></td>
+                    </tr>
+                    <tr>
+                        <td>Review eFONA equipment list given single flag without narrative (sense-check against RCEM eFONA standards)</td>
+                        <td>Tick-box flag (1 respondent)</td>
+                        <td>Project Lead</td>
+                        <td><span class="status-pill status-todo">To action</span></td>
+                    </tr>
+                    <tr>
+                        <td>Include condensed walkthrough/flowchart pages inside each physical procedure pack (in addition to the central QRH)</td>
+                        <td>Dr Safdar Imam</td>
+                        <td>Project Lead</td>
+                        <td><span class="status-pill status-carry">Carried to Cycle 3</span></td>
+                    </tr>
+                    <tr>
+                        <td>Print revised QRH on A4 (laminated) and deploy in Resus as a standalone cognitive aid</td>
+                        <td>Project plan</td>
+                        <td>Project Lead</td>
+                        <td><span class="status-pill status-todo">Imminent</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="reflection-box" style="margin-top:15px;">
+                <strong>Rationale for standalone deployment ahead of trolley build:</strong><br>
+                Deploying the revised QRH in Resus before the HALO Trolley arrives has two methodological advantages. First, it separates the cognitive intervention from the physical infrastructure intervention, allowing each to be measured independently. Second, it enables early uptake of the QRH and provides an interim window for "Time to Kit" measurements with cognitive aid alone, against which the combined cognitive-plus-infrastructure intervention in Cycle 2 can be compared. This makes the run chart easier to interpret because each PDSA cycle introduces one identifiable change.
+            </div>
+
+            <div class="pdsa-cycle-box planned" style="margin-top:20px;">
+                <h4>PDSA Cycle 2: Physical Infrastructure (HALO Trolley) <span class="cycle-tag tag-planned">PLANNED</span></h4>
+                <p><strong>Aim:</strong> Reduce "Time to Kit" by 50% by consolidating dispersed HALO equipment into a single tagged trolley located in Resus.</p>
+                <p><strong>Plan:</strong> Use the confirmed quote (Charlotte Vineham, March 2026) to build the trolley. Implement the agreed visual-check tagging system with Senior Sister Sarah Hart. Mount the revised QRH on the trolley alongside the standalone copy already in Resus.</p>
+                <p><strong>Do:</strong> Introduce the physical trolley to the Resus bay. Dr Maida (SHO) collects post-intervention "Stopwatch Audit" timings using the scenario declaration protocol.</p>
+                <p><strong>Study:</strong> Compare new retrieval times against baseline (Median 245s) using IHI run chart rules. Look specifically for a sustained shift below the baseline median (6+ consecutive points).</p>
+                <p><strong>Act:</strong> Adjust drawer dividers or repackaging if specific kits are difficult to extract quickly. Refine the tag policy based on early compliance data.</p>
+            </div>
+
+            <div class="pdsa-cycle-box planned">
+                <h4>PDSA Cycle 3: Kit Rationalisation (Theatre Pack Review) <span class="cycle-tag tag-planned">PLANNED</span></h4>
+                <p><strong>Aim:</strong> Ensure all supplied kit is fit for emergency use, by stripping redundant items from theatre packs (e.g. Thoracotomy, Hysterotomy) that introduce clutter and cognitive friction during HALO procedures. Embed the QRH walkthrough/flowchart inside each pack as recommended by Dr Imam.</p>
+                <p><strong>Plan:</strong> Audit existing standard theatre tray contents against RCEM recommendations for ED interventions. Identify items that are theatre-specific and not required in an ED resuscitation context.</p>
+                <p><strong>Do:</strong> Build a proposal for bespoke, streamlined ED procedural trays. Co-design the contents with Dr Safdar Imam (Resus Lead), Mr Muhammad Zia (Trauma Lead), and the Stores Team. Trial revised packs in-situ.</p>
+                <p><strong>Study:</strong> Re-measure "Time to Useful Kit" (time from accessing the tray to having required items laid out). Survey users on whether streamlined packs reduce cognitive load.</p>
+                <p><strong>Act:</strong> Finalise the bespoke pack specification. Embed in Trust procurement so the streamlined pack becomes business as usual.</p>
+            </div>
         </section>
 
         <div class="page-break"></div>
@@ -1082,9 +1368,9 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td class="gantt-task-col"><strong>PDSA 1:</strong> Booklet Review</td>
-                            <td class="gantt-prep">REVIEW</td>
-                            <td class="gantt-prep">REVIEW</td>
+                            <td class="gantt-task-col"><strong>PDSA 1:</strong> QRH Revisions & Print</td>
+                            <td class="gantt-prep">REVISE</td>
+                            <td class="gantt-live">DEPLOY</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -1205,37 +1491,153 @@
                         <td>The underlying principle is generalisable even if specific timings are not. The project methodology is designed to be replicable.</td>
                     </tr>
                     <tr>
-                        <td><strong>Small sample size</strong></td>
-                        <td>Baseline data is N=13. The sample is too small for parametric statistical testing of timing data.</td>
-                        <td>Run chart methodology is specifically designed for small-sample QI work and does not require large N.</td>
+                        <td><strong>Baseline survey composition</strong></td>
+                        <td>The baseline survey (N=16) included no consultants. Composition: 7 HST4+ trainees, 4 SHOs, 4 ACPs, 1 Other. The senior consultant view of equipment location knowledge is therefore not captured in baseline data.</td>
+                        <td>Consultant input was captured separately through the QRH peer review questionnaire (N=10, of which 3 consultants). Re-survey at 3 months post-deployment will deliberately target consultant participation.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Baseline timing data — small pilot</strong></td>
+                        <td>The "Time to Kit" baseline currently rests on a small pilot (approximately 5–6 timed retrievals). This is too small to plot a robust pre-intervention median.</td>
+                        <td>Baseline timing data is being consolidated before PDSA Cycle 2 launch. Run chart interpretation will be deferred until at least 12 baseline data points are accumulated, in line with IHI guidance.</td>
                     </tr>
                     <tr>
                         <td><strong>Hawthorne effect</strong></td>
                         <td>Staff who know they are being timed may perform differently to their normal behaviour.</td>
                         <td>Mitigated by using a scenario-based approach where the timer starts at scenario declaration. This captures the cognitive processing time.</td>
                     </tr>
+                    <tr>
+                        <td><strong>QRH feedback sample</strong></td>
+                        <td>QRH feedback collected from N=10 senior clinicians; nursing and resident doctor (SHO) voices are under-represented in the formal survey.</td>
+                        <td>Cycles 2 and 3 will include nursing and SHO feedback channels via the tag system audit and post-intervention stopwatch debriefs.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Self-selection and ceiling effects in QRH feedback</strong></td>
+                        <td>Respondents may be those most engaged with HALO procedures; ceiling effects (mean ≥4.6 across all domains; overall recommendation 10/10) may reflect respondent enthusiasm as well as instrument quality.</td>
+                        <td>Triangulate with objective "Time to Kit" data and post-deployment knowledge assessment in Cycles 2 and 3.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Project status at submission</strong></td>
+                        <td>At the point of this ARCP submission, PDSA Cycle 1 has progressed through Plan, Do and Study and is currently in Act. Cycles 2 and 3 are sequenced to follow. Full post-intervention outcome data is therefore not yet available.</td>
+                        <td>The project will continue beyond this ARCP. Final outcome data will be presented at the departmental governance meeting and through subsequent dissemination channels (see Section 14c).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>14c. Dissemination Plan</h2>
+            <p>The project has not yet been formally presented. The dissemination plan is:</p>
+            <table class="measure-table">
+                <thead>
+                    <tr>
+                        <th width="25%">Audience</th>
+                        <th width="35%">Method</th>
+                        <th width="20%">Timing</th>
+                        <th width="20%">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>UHB Heartlands ED Governance Meeting</strong></td>
+                        <td>10-minute project update (HALO QRH go-live, trolley plan, baseline data, future cycles)</td>
+                        <td>Next available departmental governance slot</td>
+                        <td>Planned</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ED Consultant Body</strong></td>
+                        <td>QRH peer review questionnaire results circulated by email</td>
+                        <td>May 2026</td>
+                        <td>In progress</td>
+                    </tr>
+                    <tr>
+                        <td><strong>UHB Patient Safety Group</strong></td>
+                        <td>Referral via departmental governance lead if scope/risk warrants</td>
+                        <td>Post-launch of Cycle 2</td>
+                        <td>Aspirational</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WMEBEM regional teaching</strong></td>
+                        <td>Case study presentation on PDSA sequencing in low-frequency procedures</td>
+                        <td>Post-completion of Cycle 2</td>
+                        <td>Planned</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RCEM ASM / RCEM Learning</strong></td>
+                        <td>Poster submission on HALO trolley methodology and outcomes</td>
+                        <td>Once outcome data complete (anticipated late 2026)</td>
+                        <td>Planned</td>
+                    </tr>
                 </tbody>
             </table>
         </section>
 
         <section style="page-break-before: always;">
-            <h2>15. RCEM Portfolio Reflection (Project Lead/Trainee)</h2>
-            <p><em>This section meets the requirements for the FRCEM/Portfolio "Quality Improvement" domain.</em></p>
-            
+            <h2>15. ST6 Reflection: Leadership, Learning & Longitudinal QI Development</h2>
+            <p><em>This reflection meets the RCEM 2021 Curriculum (2025 Update) requirement for ST6 to demonstrate mature reflection on a trainee-led project and to summarise the longitudinal development of QI and leadership skills across the entirety of EM training (SLO11).</em></p>
+
             <div class="weekly-plan" style="border-left: 4px solid var(--secondary-color);">
-                <div class="week-header" style="background-color: #e8f0f7; color: var(--secondary-color);">PERSONAL REFLECTION: LEADERSHIP & CHANGE</div>
-                
-                <p><strong>1. What was the most difficult part of this project?</strong><br>
-                "Moving from 'Work as Imagined' to 'Work as Done'. I assumed staff knew where kit was. The baseline data showed huge variation. Convincing senior nursing staff to allow a new trolley required negotiation skills and a focus on Patient Safety. Securing multi-stakeholder buy-in required tailored communication for each group's priorities."</p>
+                <div class="week-header" style="background-color: #e8f0f7; color: var(--secondary-color);">15.1 Personal qualities and self-awareness</div>
 
-                <p><strong>2. What did I learn about the Model for Improvement?</strong><br>
-                "That PDSA cycles must be small. We reordered our cycles to start with the cognitive aid booklet (PDSA 1) before introducing the physical trolley (PDSA 2). The data collection using a stopwatch provided objective evidence to support the change. Adding a knowledge assessment gave us a reliable outcome measure."</p>
+                <p><strong>What enabled this project to improve patient care.</strong> The single most useful trait I drew on was the willingness to interrogate the gap between <em>availability</em> and <em>accessibility</em>. The equipment existed. It had always existed. The system around the equipment was the problem. Recognising this earned me the right to redesign the system rather than just ask for more kit.</p>
 
-                <p><strong>3. What did I learn about leadership and delegation?</strong><br>
-                "Effective QI requires delegation with clear accountability. By assigning Dr Maida (SHO) the data collection and Jemma (EDP) the nursing dissemination, I created a team with defined roles. This also provided portfolio evidence for the junior team members."</p>
+                <p><strong>Deliberate restraint.</strong> The instinct in a QI project is to do everything at once — the cognitive aid, the trolley, the kit revision, the simulation training. I held back. Sequencing the three PDSA cycles separately means each one's effect can be measured cleanly. This was a methodological discipline rather than a personal preference, and it cost me momentum at times.</p>
 
-                <p><strong>4. Sustainability Plan:</strong><br>
-                "To ensure this does not fail when I rotate, we agreed a formal tagging process with Senior Sister Sarah Hart. The team that uses the kit replaces the drawer contents. The QRH guides have been peer-reviewed by the consultant body for long-term clinical credibility."</p>
+                <p><strong>Weaknesses I noticed.</strong> I am inclined to over-engineer. The first draft of the QRH was a 50-page handbook. It took peer feedback (and my own irritation at re-reading my own draft) to recognise that a clinician in a crisis needs two pages, not fifty. I am also prone to building the technical artefact (the QRH, the trolley specification) before doing the political work (the engagement). The political work is harder and slower, and I default to the comfortable task first. Recognising this tendency has been one of the genuine pieces of self-knowledge I take from this project, and I have actively pushed myself to put the conversations ahead of the spreadsheets.</p>
+
+                <p><strong>Working under pressure.</strong> The project ran alongside full clinical duties, a partner expecting our first child in late June 2026, and ST6-level departmental responsibilities. I learnt to use small windows of time efficiently — drafting the QRH in 30-minute blocks rather than waiting for an afternoon I never got. The trade-off was that some weeks the project moved slowly. This is a realistic feature of QI work in training, and I think the panel will recognise the genuine challenge of pursuing a multi-month intervention in parallel with clinical training.</p>
+
+                <p><strong>Seeking feedback.</strong> The QRH peer review questionnaire was deliberately structured to ask for feedback in a form that respondents could give honestly without spending much time on it. The 18-item Likert format with optional free text generated 10 responses in three weeks. The structure made it easy to spot the one consultant whose detailed free-text feedback (pledgets, cord clamps) was the highest-value input in the entire dataset.</p>
+            </div>
+
+            <div class="weekly-plan" style="border-left: 4px solid var(--secondary-color); margin-top: 20px;">
+                <div class="week-header" style="background-color: #e8f0f7; color: var(--secondary-color);">15.2 Mapping to the EM Leaders framework</div>
+                <p>The behaviours I have most actively developed during this project map to the following EM Leaders / NHS Leadership Academy framework domains:</p>
+                <ul>
+                    <li><strong>Demonstrating personal qualities</strong> — self-management, integrity, and ongoing self-development through the iterative refinement of the QRH and project plan.</li>
+                    <li><strong>Working with others</strong> — building relationships across the medical, nursing, operational and procurement teams; choosing 1:1 differentiated engagement over committee work.</li>
+                    <li><strong>Managing services</strong> — managing performance through measurement (run charts, peer review), and managing resources (the trolley quote, stock relocation logistics).</li>
+                    <li><strong>Improving services</strong> — encouraging improvement and innovation; applying knowledge and evidence (Model for Improvement, IHI run chart rules, Hierarchy of Intervention Effectiveness); managing change incrementally through staged PDSA cycles.</li>
+                </ul>
+                <p>The domain I am still developing is <strong>Setting Direction</strong> at the departmental level. I led <em>this project</em>; I have not yet led the strategic improvement programme of the department as a whole. That is appropriately a consultant-level activity, and I expect to develop it through my first consultant post.</p>
+            </div>
+
+            <div class="weekly-plan" style="border-left: 4px solid var(--secondary-color); margin-top: 20px;">
+                <div class="week-header" style="background-color: #e8f0f7; color: var(--secondary-color);">15.3 Longitudinal QI development across EM training</div>
+
+                <p><strong>ST3 — Formal QIAT submitted.</strong> <em>[Placeholder: brief one-paragraph summary of the ST3 QIP topic and what I learnt from it — to be added by Jake before submission.]</em></p>
+
+                <p><strong>ST4–ST5 — No formal QIATs submitted; QI activity continued.</strong> I have reflected on this gap with my Educational Supervisor and have used the present ST6 QIAT as the consolidating record of my QI development across the latter half of training. During ST4 and ST5 I engaged in QI activity that did not result in formal QIATs but shaped how I approach this project:</p>
+
+                <ul>
+                    <li><strong>Attempted Learning Disability Patient Passport for the ED.</strong> I designed a single-page passport for patients with learning disabilities to make their reasonable adjustments visible at every interaction. The project failed at implementation: it depended on nursing staff adding paper-based effort to an already pressured workflow, and the EPR could not be updated to host the passport electronically within the project timeline. The learning from that failure was specific and applied directly to the HALO project:
+                        <ol type="i">
+                            <li>never design an intervention that adds paper work to a nursing workflow with no offsetting reduction elsewhere — find the cognitive aid that <em>replaces</em> rather than <em>adds</em> work;</li>
+                            <li>confirm the technology pathway before designing the workflow, not after;</li>
+                            <li>get nursing in the room during design, not during deployment.</li>
+                        </ol>
+                        Each of those lessons is visible in how the HALO project has been structured — particularly the co-designed tag system rather than an additive paper checklist.
+                    </li>
+                    <li><strong>Educational quality improvement through the WMEBEM platform.</strong> I have developed and deployed multiple clinically-grounded educational tools through the West Midlands Evidence Based Emergency Medicine platform, including a VBG/ABG interpreter, an acute frailty pathway, a procedural sedation record form, paediatric rashes guidance, a TST/MITT triage trainer, and a high-fidelity scenario simulator. These sit within the SLO11 definition of QI activity that improves training and educational quality. Where direct user feedback has shaped iterative improvements (e.g. the VBG/ABG interpreter was migrated to a different AI backend after evaluation), the iterative method has been the same as the PDSA approach used in the HALO project.</li>
+                    <li><strong>Belmont infuser clinical reference document (ST5).</strong> A short-cycle improvement to embed a reliable cognitive aid for the use of a critical resuscitation device, with attention to print compatibility — the same design principle applied to the HALO QRH.</li>
+                </ul>
+
+                <p><strong>How my QI thinking has developed across training.</strong> At earlier stages, my projects were essentially audit-and-improve — measure a thing, push for compliance with a standard, re-audit. The Learning Disability passport was the moment I learnt the limits of that approach: technically clean audits can hide socially or operationally unimplementable interventions. The HALO project is the first one in which I designed with stakeholder constraints at the centre rather than at the periphery. The methodological diversity (driver diagram, fishbone, Hierarchy of Intervention Effectiveness, peer review survey, run charts) reflects an attempt to match tools to problem features rather than applying a single template to every situation.</p>
+            </div>
+
+            <div class="weekly-plan" style="border-left: 4px solid var(--secondary-color); margin-top: 20px;">
+                <div class="week-header" style="background-color: #e8f0f7; color: var(--secondary-color);">15.4 What I will carry into consultant practice</div>
+                <ul>
+                    <li>The single most important QI lesson from training is: <strong>engage the people who do the work, in the design phase</strong>. Everything else is downstream of this.</li>
+                    <li><strong>Failed projects are more instructive than successful ones</strong>, provided the failure is examined honestly. The Learning Disability passport gave me more methodological discipline than any of my successful projects.</li>
+                    <li><strong>Sequence interventions to make the measurement interpretable</strong>, even if it slows the work. A noisy run chart is worse than a slightly slower implementation.</li>
+                    <li><strong>Do the political work first; the technical work is the comfortable bit.</strong></li>
+                    <li>I expect to take on <strong>QI supervision and coaching of trainees</strong> in my first consultant post, and I see this as a natural progression from leading SHO and EDP team members through this project.</li>
+                </ul>
+            </div>
+
+            <div class="weekly-plan" style="border-left: 4px solid var(--secondary-color); margin-top: 20px;">
+                <div class="week-header" style="background-color: #e8f0f7; color: var(--secondary-color);">15.5 Sustainability after I leave the department</div>
+                <p>The project has been designed for sustainability after I rotate. The tagging system, co-designed with Senior Sister Sarah Hart, places responsibility for restock on the team that breaks a tag — so the workflow does not depend on a named project lead. The QRH has been peer-reviewed by the consultant body so its clinical credibility is collectively owned rather than tied to my authorship. The trolley quote and stock relocation plan are documented in the Implementation Playbook and Master Stocking Order so that procurement and stores have the operational knowledge to maintain it. The dissemination plan (Section 14c) sets out how the project will continue to be reported on after my departure.</p>
             </div>
         </section>
 
